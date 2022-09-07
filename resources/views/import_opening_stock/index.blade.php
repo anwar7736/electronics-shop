@@ -105,3 +105,13 @@
 <!-- /.content -->
 
 @endsection
+@section('javascript')
+	<script>
+		$(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{'import-opening-stock'}}?lang=" + $(this).val();
+            });
+		});
+	</script>
+
+@endsection

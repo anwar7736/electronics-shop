@@ -156,6 +156,10 @@ $(document).ready( function(){
             }
         });
     });
+    $('#change_lang').change( function(){
+				window.location = "{{'/sells/quotations'}}?lang=" + $(this).val();
+			
+	  });
 });
 </script>
 	

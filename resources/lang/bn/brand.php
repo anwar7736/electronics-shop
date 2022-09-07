@@ -11,10 +11,10 @@ return [
     |
     */
 
-    'brands' => 'Brands',
-    'manage_your_brands' => 'Manage your brands',
-    'all_your_brands' => 'All your brands',
-    'note' => 'Note',
+    'brands' => 'ব্র্যান্ডসমূহ',
+    'manage_your_brands' => 'আপনার ব্র্যান্ডসমূহ ম্যানেজ করুন',
+    'all_your_brands' => 'আপনার সকল ব্র্যান্ডসমূহ',
+    'note' => 'নোট',
     'brand_name' => 'Brand name',
     'short_description' => 'Short description',
     'added_success' => 'Brand added successfully',

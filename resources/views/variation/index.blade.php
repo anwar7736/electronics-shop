@@ -46,3 +46,15 @@
 <!-- /.content -->
 
 @endsection
+
+@section('javascript')
+	<script>
+		$(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{route('variation-templates.index')}}?lang=" + $(this).val();
+            });
+		});
+	</script>
+
+@endsection
+

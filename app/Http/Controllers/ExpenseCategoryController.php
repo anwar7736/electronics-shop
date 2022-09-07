@@ -15,6 +15,7 @@ class ExpenseCategoryController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('expense.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -47,6 +48,7 @@ class ExpenseCategoryController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('expense.access')) {
             abort(403, 'Unauthorized action.');
         }

@@ -215,6 +215,12 @@ $(document).ready( function(){
         sell_table.ajax.reload();
     });
 });
+$(document).ready(function(){
+        $('#change_lang').change( function(){
+		    window.location = "{{'shipments'}}?lang=" + $(this).val();
+			
+	  });
+    });
 </script>
 <script src="{{ asset('js/payment.js?v=' . $asset_v) }}"></script>
 @endsection

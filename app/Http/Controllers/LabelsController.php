@@ -37,6 +37,7 @@ class LabelsController extends Controller
      */
     public function show(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = $request->session()->get('user.business_id');
         $purchase_id = $request->get('purchase_id', false);
         $product_id = $request->get('product_id', false);

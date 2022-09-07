@@ -380,6 +380,9 @@
                 //     console.log('Pressed: ' + iKeyCode);
                 // }
             });
+            $('#change_lang').change( function(){
+            window.location = "{{route('products.create')}}?lang=" + $(this).val();
+            });
         });
     </script>
 @endsection

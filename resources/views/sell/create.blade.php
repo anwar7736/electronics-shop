@@ -733,6 +733,25 @@
 		        browseLabel: LANG.file_browse_label,
 		        removeLabel: LANG.remove,
 		    });
-    	});
+    
+
+			$('#change_lang').change( function(){
+			let status  = "<?php echo $status; ?>";
+
+			if(status == 'draft')
+			{
+				window.location = "{{route('sells.create')}}?status=draft&lang=" + $(this).val();
+			
+			} 
+			else if(status == 'quotation')
+			{
+				window.location = "{{route('sells.create')}}?status=quotation&lang=" + $(this).val();
+			}
+			else if(status == '')
+			{
+				window.location = "{{route('sells.create')}}?lang=" + $(this).val();
+			}
+	  });
+    });
     </script>
 @endsection

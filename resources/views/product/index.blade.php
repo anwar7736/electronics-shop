@@ -398,6 +398,10 @@
             });
 
             $('#product_location').select2({dropdownParent: $('#product_location').closest('.modal')});
+
+            $('#change_lang').change( function(){
+            window.location = "{{route('products.index')}}?lang=" + $(this).val();
+        });
         });
 
         $(document).on('shown.bs.modal', 'div.view_product_modal, div.view_modal', 

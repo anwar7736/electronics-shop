@@ -154,5 +154,11 @@
     $(document).on('hidden.bs.modal', '.discount_modal', function(){
         $("#variation_ids").select2('destroy'); 
     });
+    $(document).ready(function(){
+        $('#change_lang').change( function(){
+		    window.location = "{{route('discount.index')}}?lang=" + $(this).val();
+			
+	  });
+    });
 </script>
 @endsection

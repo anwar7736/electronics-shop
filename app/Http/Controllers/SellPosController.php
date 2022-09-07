@@ -106,6 +106,7 @@ class SellPosController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sell.view') && !auth()->user()->can('sell.create')) {
             abort(403, 'Unauthorized action.');
         }
@@ -146,6 +147,7 @@ class SellPosController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         if (!(auth()->user()->can('superadmin') || auth()->user()->can('sell.create') || ($this->moduleUtil->hasThePermissionInSubscription($business_id, 'repair_module') && auth()->user()->can('repair.create')))) {
@@ -1724,6 +1726,7 @@ class SellPosController extends Controller
      */
     public function listSubscriptions()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sell.view') && !auth()->user()->can('direct_sell.access')) {
             abort(403, 'Unauthorized action.');
         }

@@ -38,6 +38,7 @@ class SellingPriceGroupController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('product.create')) {
             abort(403, 'Unauthorized action.');
         }

@@ -34,4 +34,12 @@
 @section('javascript')
 @include('sale_pos.partials.subscriptions_table_javascript')
 <script src="{{ asset('js/payment.js?v=' . $asset_v) }}"></script>
+<script>
+        $(document).ready(function(){
+        $('#change_lang').change( function(){
+		    window.location = "{{'subscriptions'}}?lang=" + $(this).val();
+			
+	  });
+    });
+</script>
 @endsection

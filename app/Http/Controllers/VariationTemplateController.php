@@ -21,6 +21,7 @@ class VariationTemplateController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (request()->ajax()) {
             $business_id = request()->session()->get('user.business_id');
 
@@ -60,6 +61,7 @@ class VariationTemplateController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         return view('variation.create');
     }
 

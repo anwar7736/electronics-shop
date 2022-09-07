@@ -33,6 +33,7 @@ class TaxonomyController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         $category_type = request()->get('type');
         if ($category_type == 'product' && !auth()->user()->can('category.view') && !auth()->user()->can('category.create')) {
             abort(403, 'Unauthorized action.');

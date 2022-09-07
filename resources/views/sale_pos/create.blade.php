@@ -95,6 +95,13 @@
 	<script src="{{ asset('js/printer.js?v=' . $asset_v) }}"></script>
 	<script src="{{ asset('js/product.js?v=' . $asset_v) }}"></script>
 	<script src="{{ asset('js/opening_stock.js?v=' . $asset_v) }}"></script>
+	<script>
+    $(document).ready(function(){
+        $('#change_lang').change( function(){
+        window.location = "{{route('pos.index')}}?lang=" + $(this).val();
+        });
+    });
+</script>
 	@include('sale_pos.partials.keyboard_shortcuts')
 
 	<!-- Call restaurant module if defined -->

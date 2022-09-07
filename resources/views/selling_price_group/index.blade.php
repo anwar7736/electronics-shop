@@ -171,5 +171,11 @@
         });
 
     });
+
+		$(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{route('selling-price-group.index')}}?lang=" + $(this).val();
+            });
+		});
 </script>
 @endsection

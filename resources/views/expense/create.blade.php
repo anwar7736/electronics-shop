@@ -191,4 +191,11 @@
 	    }
 	});
 </script>
+<script>
+		$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('expenses.create')}}?lang=" + $(this).val();
+		});
+	});
+	</script>
 @endsection

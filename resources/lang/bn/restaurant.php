@@ -9,8 +9,8 @@ return [
     */
 
     'restaurant' => 'Restaurant',
-    'tables' => 'Tables',
-    'table' => 'Table',
+    'tables' => 'টেবিলসমূহ',
+    'table' => 'টেবিল',
     'manage_your_tables' => 'Manage restaurant tables',
     'all_your_tables' => 'All restaurant tables',
     'description' => 'Description',
@@ -60,7 +60,7 @@ return [
     'refresh' => 'Refresh',
     'no_orders_found' => 'No orders found',
     'select_service_staff' => 'Select service staff',
-    'service_staff' => 'Service staff',
+    'service_staff' => 'সার্ভিস স্টাফ',
     'kitchen_for_restaurant' => 'Kitchen (For restaurants)',
     'products_for_modifier' => 'Products for modifier',
     'is_service_staff' => 'Is service staff',

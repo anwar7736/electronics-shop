@@ -36,6 +36,7 @@ class UnitController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('unit.view') && !auth()->user()->can('unit.create')) {
             abort(403, 'Unauthorized action.');
         }

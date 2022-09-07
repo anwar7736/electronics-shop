@@ -39,6 +39,7 @@ class ImportOpeningStockController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('product.opening_stock')) {
             abort(403, 'Unauthorized action.');
         }

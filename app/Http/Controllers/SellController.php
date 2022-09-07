@@ -72,6 +72,7 @@ class SellController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         $is_admin = $this->businessUtil->is_admin(auth()->user());
 
         if ( !$is_admin && !auth()->user()->hasAnyPermission(['sell.view', 'sell.create', 'direct_sell.access', 'view_own_sell_only', 'view_commission_agent_sell', 'access_shipping', 'access_own_shipping', 'access_commission_agent_shipping']) ) {
@@ -481,6 +482,7 @@ class SellController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('direct_sell.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -922,6 +924,7 @@ class SellController extends Controller
      */
     public function getDrafts()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('list_drafts')) {
             abort(403, 'Unauthorized action.');
         }
@@ -945,6 +948,7 @@ class SellController extends Controller
      */
     public function getQuotations()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('list_quotations')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1284,6 +1288,7 @@ class SellController extends Controller
      */
     public function shipments()
     {
+        app()->setLocale(request()->query('lang'));
         $is_admin = $this->businessUtil->is_admin(auth()->user());
 
         if ( !$is_admin && !auth()->user()->hasAnyPermission(['access_shipping', 'access_own_shipping', 'access_commission_agent_shipping']) ) {

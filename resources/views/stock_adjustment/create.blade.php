@@ -132,4 +132,12 @@
 	<script type="text/javascript">
 		__page_leave_confirmation('#stock_adjustment_form');
 	</script>
+	</script>
+	<script>
+		$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('stock-adjustments.create')}}?lang=" + $(this).val();
+		});
+	});
+	</script>
 @endsection

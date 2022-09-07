@@ -11,12 +11,12 @@ return [
     |
     */
 
-    'units' => 'Units',
-    'manage_your_units' => 'Manage your units',
-    'all_your_units' => 'All your units',
-    'name' => 'Name',
-    'short_name' => 'Short name',
-    'allow_decimal' => 'Allow decimal',
+    'units' => 'ইউনিট',
+    'manage_your_units' => 'আপনার ইউনিট ম্যানেজ করুন',
+    'all_your_units' => 'আপনার সকল ইউনিটসমূহ',
+    'name' => 'নাম',
+    'short_name' => 'ডাক নাম',
+    'allow_decimal' => 'ভগ্নাংশ গ্রহণযোগ্য',
     'added_success' => 'Unit added successfully',
     'updated_success' => 'Unit updated successfully',
     'deleted_success' => 'Unit deleted successfully',

@@ -31,7 +31,7 @@ return [
     'all_your_invoice_layouts' => 'All your invoice layouts',
     'add_invoice_layout' => 'Add new invoice layout',
     'layout_name' => 'Layout name',
-    'invoice_scheme' => 'Invoice scheme',
+    'invoice_scheme' => 'ইনভয়েস স্কিমা',
     'header_text' => 'Header text',
     'invoice_no_prefix' => 'Invoice no. label',
     'invoice_heading' => 'Invoice heading',

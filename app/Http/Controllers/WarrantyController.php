@@ -15,6 +15,7 @@ class WarrantyController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         if (request()->ajax()) {

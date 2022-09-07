@@ -80,4 +80,11 @@
         });
     });
 </script>
+<script>
+        $(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{route('warranties.index')}}?lang=" + $(this).val();
+            });
+		});
+    </script>
 @endsection

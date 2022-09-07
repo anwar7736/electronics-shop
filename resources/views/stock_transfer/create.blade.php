@@ -135,4 +135,11 @@
 	<script type="text/javascript">
 		__page_leave_confirmation('#stock_transfer_form');
 	</script>
+	    <script>
+        $(document).ready(function(){
+        $('#change_lang').change( function(){
+        window.location = "{{route('stock-transfers.create')}}?lang=" + $(this).val();
+        });
+    });
+    </script>
 @endsection

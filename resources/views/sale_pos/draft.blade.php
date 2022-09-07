@@ -152,7 +152,11 @@ $(document).ready( function(){
             }
         });
     });
+    $('#change_lang').change( function(){
+				window.location = "{{'drafts'}}?lang=" + $(this).val();
+			
+	  });
 });
+
 </script>
-	
 @endsection

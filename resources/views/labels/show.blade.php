@@ -165,4 +165,12 @@
 @stop
 @section('javascript')
 	<script src="{{ asset('js/labels.js?v=' . $asset_v) }}"></script>
+	<script>
+		$(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{'show'}}?lang=" + $(this).val();
+            });
+		});
+	</script>
+
 @endsection

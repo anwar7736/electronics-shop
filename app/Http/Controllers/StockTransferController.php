@@ -53,6 +53,7 @@ class StockTransferController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase.view') && !auth()->user()->can('purchase.create')) {
             abort(403, 'Unauthorized action.');
         }
@@ -148,6 +149,7 @@ class StockTransferController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase.create')) {
             abort(403, 'Unauthorized action.');
         }

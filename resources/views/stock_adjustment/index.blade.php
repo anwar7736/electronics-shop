@@ -43,4 +43,12 @@
 @stop
 @section('javascript')
 	<script src="{{ asset('js/stock_adjustment.js?v=' . $asset_v) }}"></script>
+    </script>
+	    <script>
+        $(document).ready(function(){
+        $('#change_lang').change( function(){
+        window.location = "{{route('stock-adjustments.index')}}?lang=" + $(this).val();
+        });
+    });
+    </script>
 @endsection

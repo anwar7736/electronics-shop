@@ -33,7 +33,7 @@ return [
     'contact_info' => ':contact info',
     'all_purchases_linked_to_this_contact' => 'All purchases related to this contact',
     'all_sells_linked_to_this_contact' => 'All sells related to this contact',
-    'total_purchase_due' => 'total_sale_due',
+    'total_purchase_due' => 'মোট বিক্রির বাকী',
     'pay_due_amount' => 'Pay Due Amount',
     'total_paid' => 'Total Paid',
     'total_purchase_paid' => 'Total Purchase Payment',

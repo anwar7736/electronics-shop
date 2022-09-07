@@ -56,4 +56,11 @@
 @section('javascript')
 @include('sale_pos.partials.sale_table_javascript')
 <script src="{{ asset('js/payment.js?v=' . $asset_v) }}"></script>
+<script>
+    $(document).ready(function(){
+        $('#change_lang').change( function(){
+        window.location = "{{route('pos.index')}}?lang=" + $(this).val();
+        });
+    });
+</script>
 @endsection

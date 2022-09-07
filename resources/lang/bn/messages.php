@@ -11,10 +11,10 @@ return [
     |
     */
 
-    'add' => 'Add',
-    'edit' => 'Edit',
-    'save' => 'Save',
-    'update' => 'Update',
+    'add' => 'তৈরি করুন',
+    'edit' => 'পরিবর্তন করুন',
+    'save' => 'জমা করে রাখুন',
+    'update' => 'পরিবর্তন করুন',
     'action' => 'প্রতিক্রিয়া',
     'actions' => 'Actions',
     'view' => 'View',
@@ -24,7 +24,7 @@ return [
     'required' => 'This field is required',
     'please_select' => 'Please Select',
     'cancel' => 'Cancel',
-    'date' => 'Date',
+    'date' => 'তারিখ',
     'filter_by_date' => 'Filter by date',
     'location' => 'Location',
     'go_back' => 'Go Back',

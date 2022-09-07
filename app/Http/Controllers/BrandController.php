@@ -33,6 +33,7 @@ class BrandController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('brand.view') && !auth()->user()->can('brand.create')) {
             abort(403, 'Unauthorized action.');
         }

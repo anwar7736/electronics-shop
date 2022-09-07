@@ -11,12 +11,12 @@ return [
     |
     */
 
-    'categories' => 'Categories',
-    'manage_your_categories' => 'Manage your categories',
+    'categories' => 'ক্যাটেগরিসমূহ',
+    'manage_your_categories' => 'আপনার ক্যাটেগরিসমূহ ম্যানেজ করুন',
     'all_your_categories' => 'All your categories',
-    'category' => 'Category',
-    'category_name' => 'Category name',
-    'code' => 'Category Code',
+    'category' => 'ক্যাটেগরি',
+    'category_name' => 'ক্যাটেগরির নাম',
+    'code' => 'ক্যাটেগরি কোড',
     'add_as_sub_category' => 'Add as sub-category',
     'select_parent_category' => 'Select parent category',
     'added_success' => 'Category added successfully',

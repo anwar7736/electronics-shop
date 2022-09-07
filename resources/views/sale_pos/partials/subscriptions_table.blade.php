@@ -3,7 +3,7 @@
 		<thead>
 			<tr>
 				<th>@lang('messages.date')</th>
-                <th>@lang('lang_v1.subscription_no')</th>
+                <th>@lang('lang_v1.	')</th>
 				<th>@lang('sale.customer_name')</th>
                 <th>@lang('sale.location')</th>
                 <th>@lang('lang_v1.subscription_interval')</th>
