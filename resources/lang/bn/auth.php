@@ -12,8 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'এই শংসাপত্রগুলি আমাদের রেকর্ডের সাথে মেলে না।',
+    'throttle' => 'অনেক বেশি লগইন প্রচেষ্টা। অনুগ্রহ করে :seconds সেকেন্ডের মধ্যে আবার চেষ্টা করুন।',
 
 ];

@@ -305,6 +305,9 @@
       update_grand_total();
       __page_leave_confirmation('#add_purchase_form');
     });
+    $('#change_lang').change( function(){
+          window.location = "{{ route('purchases.edit', $purchase->id) }}?lang=" + $(this).val();
+      });
   </script>
   @include('purchase.partials.keyboard_shortcuts')
 @endsection

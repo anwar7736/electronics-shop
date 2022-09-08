@@ -90,6 +90,7 @@ class ManageUserController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('user.create')) {
             abort(403, 'Unauthorized action.');
         }
@@ -231,6 +232,7 @@ class ManageUserController extends Controller
      */
     public function show($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('user.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -262,6 +264,7 @@ class ManageUserController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('user.update')) {
             abort(403, 'Unauthorized action.');
         }

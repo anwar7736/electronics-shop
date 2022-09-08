@@ -266,5 +266,8 @@
                     }
                 }
             });
+            $('#change_lang').change( function(){
+            window.location = "{{ route('users.edit', $user->id) }}?lang=" + $(this).val();
+        });
 </script>
 @endsection

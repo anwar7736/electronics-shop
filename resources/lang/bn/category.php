@@ -10,19 +10,17 @@ return [
     | The following language lines are used for Brand CRUD operations.
     |
     */
-
-    'categories' => 'ক্যাটেগরিসমূহ',
-    'manage_your_categories' => 'আপনার ক্যাটেগরিসমূহ ম্যানেজ করুন',
-    'all_your_categories' => 'All your categories',
-    'category' => 'ক্যাটেগরি',
-    'category_name' => 'ক্যাটেগরির নাম',
-    'code' => 'ক্যাটেগরি কোড',
-    'add_as_sub_category' => 'Add as sub-category',
-    'select_parent_category' => 'Select parent category',
-    'added_success' => 'Category added successfully',
-    'updated_success' => 'Category updated successfully',
-    'deleted_success' => 'Category deleted successfully',
-    'add_category' => 'Add Category',
-    'edit_category' => 'Edit Category',
-
+    'categories' => 'বিভাগ',
+    'manage_your_categories' => 'আপনার বিভাগ পরিচালনা করুন',
+    'all_your_categories' => 'আপনার সমস্ত বিভাগ',
+    'category' => 'বিভাগ',
+    'category_name' => 'শ্রেণির নাম',
+    'code' => 'ক্যাটাগরি কোড',
+    'add_as_sub_category' => 'সাব-বিভাগ হিসাবে যোগ করুন',
+    'select_parent_category' => 'অভিভাবক বিভাগ নির্বাচন করুন',
+    'added_success' => 'বিভাগ সফলভাবে যোগ করা হয়েছে',
+    'updated_success' => 'বিভাগ সফলভাবে আপডেট হয়েছে',
+    'deleted_success' => 'বিভাগ সফলভাবে মুছে ফেলা হয়েছে',
+    'add_category' => 'বিভাগ যোগ করুন',
+    'edit_category' => 'বিভাগ সম্পাদনা করুন',
 ];

@@ -11,20 +11,20 @@ return [
     |
     */
 
-    'stock_adjustment' => 'Stock Adjustment',
-    'stock_adjustments' => 'স্টক এডজাস্টমেন্ট',
-    'list' => 'List Stock Adjustments',
-    'add' => 'স্টক এডজাস্টমেন্ট তৈরি করুন',
-    'all_stock_adjustments' => 'সকল স্টক এডজাস্টমেন্ট',
-    'search_product' => 'স্টক স্থানান্তরের জন্য পণ্য খোঁজ করুন',
-    'adjustment_type' => 'এডজাস্টমেন্টের ধরণ',
-    'normal' => 'Normal',
-    'abnormal' => 'Abnormal',
-    'total_amount' => 'মোট টাকা',
-    'total_amount_recovered' => 'মোট টাকা রিকভার্ড',
+    'stock_adjustment' => 'স্টক সামঞ্জস্য',
+    'stock_adjustments' => 'স্টক সামঞ্জস্য',
+    'list' => 'স্টক অ্যাডজাস্টমেন্টের তালিকা',
+    'add' => 'স্টক অ্যাডজাস্টমেন্ট যোগ করুন',
+    'all_stock_adjustments' => 'সমস্ত স্টক সমন্বয়',
+    'search_product' => 'স্টক সমন্বয়ের জন্য পণ্য অনুসন্ধান করুন',
+    'adjustment_type' => 'সামঞ্জস্যের ধরন',
+    'normal' => 'স্বাভাবিক',
+    'abnormal' => 'অস্বাভাবিক',
+    'total_amount' => 'মোট পরিমাণ',
+    'total_amount_recovered' => 'মোট পরিমাণ পুনরুদ্ধার',
     'reason_for_stock_adjustment' => 'কারণ',
-    'stock_adjustment_added_successfully' => 'Stock adjustment added successfully',
-    'search_products' => 'পণ্য খুঁজুন ',
-    'delete_success' => 'Stock adjustment deleted successfully',
-    'view_details' => 'View stock adjustment details'
+    'stock_adjustment_added_successfully' => 'স্টক সমন্বয় সফলভাবে যোগ করা হয়েছে',
+    'search_products' => 'পণ্য অনুসন্ধান করুন',
+    'delete_success' => 'স্টক সমন্বয় সফলভাবে মুছে ফেলা হয়েছে',
+    'view_details' => 'স্টক সমন্বয় বিবরণ দেখুন'
 ];

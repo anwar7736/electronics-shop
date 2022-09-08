@@ -155,6 +155,9 @@
                     window.location = "{{url('/users')}}/" + $(this).val();
                 }
             });
+            $('#change_lang').change( function(){
+            window.location = "{{ route('users.show', $user->id) }}?lang=" + $(this).val();
+        });
         });
     </script>
 @endsection

@@ -269,5 +269,8 @@
       }
     }
   });
+      $('#change_lang').change( function(){
+            window.location = "{{ route('users.create') }}?lang=" + $(this).val();
+        });
 </script>
 @endsection

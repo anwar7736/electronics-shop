@@ -46,6 +46,7 @@ class CashRegisterController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         //like:repair
         $sub_type = request()->get('sub_type');
 

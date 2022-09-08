@@ -658,5 +658,9 @@
 		        removeLabel: LANG.remove,
 		    });
     	});
+
+		$('#change_lang').change( function(){
+          window.location = "{{route('sells.edit', $transaction->id)}}?lang=" + $(this).val();
+      });
     </script>
 @endsection

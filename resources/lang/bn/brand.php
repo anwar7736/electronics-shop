@@ -11,16 +11,16 @@ return [
     |
     */
 
-    'brands' => 'ব্র্যান্ডসমূহ',
-    'manage_your_brands' => 'আপনার ব্র্যান্ডসমূহ ম্যানেজ করুন',
-    'all_your_brands' => 'আপনার সকল ব্র্যান্ডসমূহ',
+    'brands' => 'ব্র্যান্ড',
+    'manage_your_brands' => 'আপনার ব্র্যান্ড পরিচালনা করুন',
+    'all_your_brands' => 'আপনার সমস্ত ব্র্যান্ড',
     'note' => 'নোট',
-    'brand_name' => 'Brand name',
-    'short_description' => 'Short description',
-    'added_success' => 'Brand added successfully',
-    'updated_success' => 'Brand updated successfully',
-    'deleted_success' => 'Brand deleted successfully',
-    'add_brand' => 'Add brand',
-    'edit_brand' => 'Edit brand',
+    'brand_name' => 'ব্র্যান্ডের নাম',
+    'short_description' => 'সংক্ষিপ্ত বিবরণ',
+    'added_success' => 'ব্র্যান্ড সফলভাবে যোগ করা হয়েছে',
+    'updated_success' => 'ব্র্যান্ড সফলভাবে আপডেট হয়েছে',
+    'deleted_success' => 'ব্র্যান্ড সফলভাবে মুছে ফেলা হয়েছে',
+    'add_brand' => 'ব্র্যান্ড যোগ করুন',
+    'edit_brand' => 'ব্র্যান্ড সম্পাদনা করুন',
 
 ];

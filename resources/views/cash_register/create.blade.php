@@ -1,4 +1,4 @@
-@extends('layouts.app')
+`@extends('layouts.app')
 @section('title',  __('cash_register.open_cash_register'))
 
 @section('content')
@@ -60,4 +60,11 @@
   {!! Form::close() !!}
 </section>
 <!-- /.content -->
+@endsection
+@section('javascript')
+    <script>
+      		$('#change_lang').change( function(){
+          window.location = "{{route('cash-register.create')}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

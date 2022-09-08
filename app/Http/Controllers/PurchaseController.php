@@ -459,6 +459,7 @@ class PurchaseController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase.update')) {
             abort(403, 'Unauthorized action.');
         }

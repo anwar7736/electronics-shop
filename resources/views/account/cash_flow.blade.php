@@ -137,5 +137,10 @@
         });
 
     });
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'cash-flow'}}?lang=" + $(this).val();
+		});
+    });
 </script>
 @endsection

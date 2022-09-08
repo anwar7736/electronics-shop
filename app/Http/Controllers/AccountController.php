@@ -34,6 +34,7 @@ class AccountController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('account.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -676,6 +677,7 @@ class AccountController extends Controller
      */
     public function cashFlow()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('account.access')) {
             abort(403, 'Unauthorized action.');
         }

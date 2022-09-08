@@ -377,5 +377,9 @@
     $(document).ready( function(){
       __page_leave_confirmation('#product_add_form');
     });
-  </script>
+
+      $('#change_lang').change( function(){
+          window.location = "{{ route('products.edit', $product->id) }}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

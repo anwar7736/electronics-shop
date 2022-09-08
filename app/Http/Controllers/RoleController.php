@@ -86,6 +86,7 @@ class RoleController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('roles.create')) {
             abort(403, 'Unauthorized action.');
         }
@@ -184,6 +185,7 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('roles.update')) {
             abort(403, 'Unauthorized action.');
         }

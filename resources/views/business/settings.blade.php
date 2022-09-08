@@ -196,5 +196,10 @@
             },
         });
     });
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('business.getBusinessSettings')}}?lang=" + $(this).val();
+		});
+    });
 </script>
 @endsection

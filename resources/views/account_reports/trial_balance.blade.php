@@ -172,6 +172,11 @@
             }
         });
     }
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'trial-balance'}}?lang=" + $(this).val();
+		});
+	});
 </script>
 
 @endsection

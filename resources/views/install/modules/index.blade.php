@@ -187,6 +187,10 @@
         $("form#upload_module_form")[0].reset();
         $(".form_col,form#upload_module_form").fadeOut();
     });
-
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('manage-modules.index')}}?lang=" + $(this).val();
+		});
+    });
 </script>
 @endsection

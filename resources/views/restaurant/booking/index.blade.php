@@ -408,6 +408,10 @@
                 .removeAttr('disabled');
             $('form#quick_add_contact')[0].reset();
         });
-
+        $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('bookings.index')}}?lang=" + $(this).val();
+		});
+    });
     </script>
 @endsection

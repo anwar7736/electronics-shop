@@ -554,6 +554,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('product.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -572,6 +573,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('product.update')) {
             abort(403, 'Unauthorized action.');
         }

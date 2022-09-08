@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'password' => 'পাসওয়ার্ড কমপক্ষে ছয়টি অক্ষরের হতে হবে এবং নিশ্চিতকরণের সাথে মেলে।',
+    'reset' => 'আপনার পাসওয়ার্ড রিসেট করা হয়েছে!',
+    'sent' => 'আমরা আপনার পাসওয়ার্ড রিসেট লিঙ্ক ই-মেইল করেছি!',
+    'token' => 'এই পাসওয়ার্ড রিসেট টোকেনটি অবৈধ।',
+    'user' => "আমরা সেই ই-মেইল ঠিকানার কোনো ব্যবহারকারী খুঁজে পাচ্ছি না।",
 
 ];

@@ -36,6 +36,7 @@ class BookingController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('crud_all_bookings') && !auth()->user()->can('crud_own_bookings')) {
             abort(403, 'Unauthorized action.');
         }

@@ -145,5 +145,10 @@
                 }
             });
         });
+        $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'payment-account-report'}}?lang=" + $(this).val();
+		});
+    });
     </script>
 @endsection

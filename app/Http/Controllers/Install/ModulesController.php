@@ -30,6 +30,7 @@ class ModulesController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('manage_modules')) {
             abort(403, 'Unauthorized action.');
         }

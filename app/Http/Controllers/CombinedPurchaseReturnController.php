@@ -43,6 +43,7 @@ class CombinedPurchaseReturnController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase.update')) {
             abort(403, 'Unauthorized action.');
         }
@@ -72,6 +73,7 @@ class CombinedPurchaseReturnController extends Controller
      */
     public function save(Request $request)
     {
+        
         if (!auth()->user()->can('purchase.update')) {
             abort(403, 'Unauthorized action.');
         }

@@ -57,5 +57,10 @@
             selector: 'textarea#'+editor_id,
         });
     });
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('notification-templates.index')}}?lang=" + $(this).val();
+		});
+    });
 </script>
 @endsection

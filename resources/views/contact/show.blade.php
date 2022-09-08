@@ -489,6 +489,9 @@ $(document).on('click', '#print_ledger_pdf', function() {
             $('#purchase_list_filter_date_range').val('');
             purchase_table.ajax.reload();
         });
+       $('#change_lang').change( function(){
+            window.location = "{{ route('contacts.show', $contact->id) }}?lang=" + $(this).val();
+        });
     });
 </script>
 @include('sale_pos.partials.subscriptions_table_javascript', ['contact_id' => $contact->id])

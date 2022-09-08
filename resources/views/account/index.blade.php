@@ -376,5 +376,11 @@
             }
         });
     });
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'account'}}?lang=" + $(this).val();
+		});
+	});
 </script>
+		
 @endsection

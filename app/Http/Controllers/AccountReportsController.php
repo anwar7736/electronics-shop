@@ -35,6 +35,7 @@ class AccountReportsController extends Controller
      */
     public function balanceSheet()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('account.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -94,6 +95,7 @@ class AccountReportsController extends Controller
      */
     public function trialBalance()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('account.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -169,6 +171,7 @@ class AccountReportsController extends Controller
      */
     public function paymentAccountReport()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('account.access')) {
             abort(403, 'Unauthorized action.');
         }

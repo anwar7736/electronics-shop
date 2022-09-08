@@ -606,7 +606,7 @@ class SellController extends Controller
         // if (!auth()->user()->can('sell.view') && !auth()->user()->can('direct_sell.access') && !auth()->user()->can('view_own_sell_only')) {
         //     abort(403, 'Unauthorized action.');
         // }
-
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         $taxes = TaxRate::where('business_id', $business_id)
                             ->pluck('name', 'id');
@@ -676,6 +676,7 @@ class SellController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('direct_sell.access')) {
             abort(403, 'Unauthorized action.');
         }

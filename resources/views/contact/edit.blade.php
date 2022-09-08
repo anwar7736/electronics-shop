@@ -430,3 +430,10 @@
 
   </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
+@section('javascript')
+    <script>
+       $('#change_lang').change( function(){
+            window.location = "{{ route('contacts.edit', $contact->id) }}?lang=" + $(this).val();
+        });
+    </script>
+@endsection

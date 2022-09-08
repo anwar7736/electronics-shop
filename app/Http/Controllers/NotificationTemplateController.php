@@ -32,6 +32,7 @@ class NotificationTemplateController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('send_notification')) {
             abort(403, 'Unauthorized action.');
         }

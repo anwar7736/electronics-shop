@@ -1139,3 +1139,10 @@
 </section>
 <!-- /.content -->
 @endsection
+@section('javascript')
+    <script>
+       $('#change_lang').change( function(){
+            window.location = "{{ route('roles.create') }}?lang=" + $(this).val();
+        });
+    </script>
+@endsection

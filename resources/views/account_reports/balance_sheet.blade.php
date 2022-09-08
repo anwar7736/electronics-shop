@@ -205,6 +205,11 @@
             }
         });
     }
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'balance-sheet'}}?lang=" + $(this).val();
+		});
+	});
 </script>
 
 @endsection

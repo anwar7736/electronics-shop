@@ -514,6 +514,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('supplier.view') && !auth()->user()->can('customer.view') && !auth()->user()->can('customer.view_own') && !auth()->user()->can('supplier.view_own')) {
             abort(403, 'Unauthorized action.');
         }
