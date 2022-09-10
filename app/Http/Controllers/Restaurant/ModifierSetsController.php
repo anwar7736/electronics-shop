@@ -35,6 +35,7 @@ class ModifierSetsController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (request()->ajax()) {
             $business_id = request()->session()->get('user.business_id');
 

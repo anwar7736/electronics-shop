@@ -104,6 +104,9 @@
             $('select#cg_location_id, select#cg_customer_group_id, #cg_date_range').change( function(){
                 cg_report_table.ajax.reload();
             });
+            $('#change_lang').change( function(){
+                window.location = "{{'customer-group'}}?lang=" + $(this).val();
+            });
         })
     </script>
 @endsection

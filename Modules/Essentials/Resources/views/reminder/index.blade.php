@@ -189,5 +189,10 @@
 			});
 		});
 	});
+	$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('reminder.index')}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

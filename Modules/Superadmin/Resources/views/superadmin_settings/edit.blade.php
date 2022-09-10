@@ -79,6 +79,9 @@
                 selector: 'textarea#superadmin_register_tc'
             });
         }
+        $('#change_lang').change( function(){
+		window.location = "{{'settings'}}?lang=" + $(this).val();
+		});
     });
 </script>
 @endsection

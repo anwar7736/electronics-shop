@@ -48,4 +48,11 @@
 </section>
 @stop
 @section('javascript')
+<script>
+        $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'api-settings'}}?lang=" + $(this).val();
+		});
+	});
+</script>
 @endsection

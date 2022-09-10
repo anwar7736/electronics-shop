@@ -84,5 +84,8 @@
         }
     });
     })(jQuery);
+    $('#change_lang').change( function(){
+          window.location = "{{'catalogue-qr'}}?lang=" + $(this).val();
+      });
 </script>
 @endsection

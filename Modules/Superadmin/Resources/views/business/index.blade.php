@@ -168,6 +168,12 @@
             }
         });
     });
+    $(document).ready( function () {
+        $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		window.location = "{{route('business.index')}}?lang=" + $(this).val();
+		});
+    });
 </script>
 
 @endsection

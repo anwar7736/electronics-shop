@@ -78,3 +78,10 @@
 </section>
 <!-- /.content -->
 @endsection
+@section('javascript')
+  <script>
+        $('#change_lang').change( function(){
+          window.location = "{{route('tax-rates.index')}}?lang=" + $(this).val();
+      });
+  </script>
+@endsection

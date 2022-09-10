@@ -76,5 +76,10 @@
                 },
             });
         })
+        $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('leave-type.index')}}?lang=" + $(this).val();
+		});
+	});
     </script>
 @endsection

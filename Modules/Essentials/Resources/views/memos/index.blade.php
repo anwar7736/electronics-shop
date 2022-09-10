@@ -184,5 +184,10 @@
 	    });
 
 	});
+	$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('document.index')}}?type=memos&lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

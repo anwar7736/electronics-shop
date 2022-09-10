@@ -158,6 +158,10 @@
                 },
             });
         }
+        $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		    window.location = "{{'report'}}?lang=" + $(this).val();
+		});
     });
 </script>
 

@@ -185,5 +185,8 @@
             service_staff_line_orders.ajax.reload();
         });
     })
+    $('#change_lang').change( function(){
+          window.location = "{{'service-staff-report'}}?lang=" + $(this).val();
+      });
     </script>
 @endsection

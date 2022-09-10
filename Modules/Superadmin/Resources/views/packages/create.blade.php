@@ -227,5 +227,8 @@
 		$('#enable_custom_link').on('ifUnchecked', function(event){
 		   $("div#custom_link_div").addClass('hide');
 		});
+		$('#change_lang').change( function(){
+		window.location = "{{route('packages.create')}}?lang=" + $(this).val();
+		});
 	</script>
 @endsection

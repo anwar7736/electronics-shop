@@ -41,6 +41,7 @@ class ProductCatalogueController extends Controller
      */
     public function index($business_id, $location_id)
     {
+     
         $products = Product::where('business_id', $business_id)
                 ->whereHas('product_locations', function($q) use ($location_id){
                     $q->where('product_locations.location_id', $location_id);
@@ -109,6 +110,7 @@ class ProductCatalogueController extends Controller
 
     public function generateQr()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'productcatalogue_module'))) {
             abort(403, 'Unauthorized action.');

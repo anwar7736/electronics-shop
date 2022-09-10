@@ -61,6 +61,7 @@ class ReportController extends Controller
      */
     public function getProfitLoss(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('profit_loss_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -91,6 +92,7 @@ class ReportController extends Controller
      */
     public function getPurchaseSell(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -154,6 +156,7 @@ class ReportController extends Controller
      */
     public function getCustomerSuppliers(Request $request)
     {
+         app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('contacts_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -259,6 +262,7 @@ class ReportController extends Controller
      */
     public function getStockReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -413,6 +417,7 @@ class ReportController extends Controller
      */
     public function getStockDetails(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         //Return the details in ajax call
         if ($request->ajax()) {
             $business_id = $request->session()->get('user.business_id');
@@ -482,6 +487,7 @@ class ReportController extends Controller
      */
     public function getTaxDetails(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('tax_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -654,6 +660,7 @@ class ReportController extends Controller
      */
     public function getTaxReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('tax_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -705,6 +712,7 @@ class ReportController extends Controller
      */
     public function getTrendingProducts(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('trending_product_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -755,6 +763,8 @@ class ReportController extends Controller
      */
     public function getExpenseReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
+
         if (!auth()->user()->can('expense_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -803,6 +813,7 @@ class ReportController extends Controller
      */
     public function getStockAdjustmentReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -851,6 +862,7 @@ class ReportController extends Controller
      */
     public function getRegisterReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('register_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -948,6 +960,7 @@ class ReportController extends Controller
      */
     public function getSalesRepresentativeReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sales_representative.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -968,6 +981,7 @@ class ReportController extends Controller
      */
     public function getSalesRepresentativeTotalExpense(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sales_representative.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -990,6 +1004,7 @@ class ReportController extends Controller
      */
     public function getSalesRepresentativeTotalSell(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sales_representative.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1037,6 +1052,7 @@ class ReportController extends Controller
      */
     public function getSalesRepresentativeTotalCommission(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sales_representative.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1072,6 +1088,7 @@ class ReportController extends Controller
      */
     public function getStockExpiryReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1253,6 +1270,7 @@ class ReportController extends Controller
      */
     public function getStockExpiryReportEditModal(Request $request, $purchase_line_id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1296,6 +1314,7 @@ class ReportController extends Controller
      */
     public function updateStockExpiryReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1356,6 +1375,7 @@ class ReportController extends Controller
      */
     public function getCustomerGroup(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('contacts_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1415,6 +1435,7 @@ class ReportController extends Controller
      */
     public function getproductPurchaseReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1527,6 +1548,7 @@ class ReportController extends Controller
      */
     public function getproductSellReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1660,6 +1682,7 @@ class ReportController extends Controller
      */
     public function getproductSellReportWithPurchase(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1789,6 +1812,7 @@ class ReportController extends Controller
      */
     public function getLotReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('stock_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -1937,6 +1961,7 @@ class ReportController extends Controller
      */
     public function purchasePaymentReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2057,6 +2082,7 @@ class ReportController extends Controller
      */
     public function sellPaymentReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2193,6 +2219,7 @@ class ReportController extends Controller
      */
     public function getTableReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2240,6 +2267,7 @@ class ReportController extends Controller
      */
     public function getServiceStaffReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('sales_representative.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2261,6 +2289,7 @@ class ReportController extends Controller
      */
     public function getproductSellGroupedReport(Request $request)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('purchase_n_sell_report.view')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2371,6 +2400,7 @@ class ReportController extends Controller
      */
     public function productStockDetails()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('report.stock_details')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2487,6 +2517,7 @@ class ReportController extends Controller
      */
     public function adjustProductStock()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('report.stock_details')) {
             abort(403, 'Unauthorized action.');
         }
@@ -2527,6 +2558,7 @@ class ReportController extends Controller
      */
     public function serviceStaffLineOrders()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         $query = TransactionSellLine::leftJoin('transactions as t', 't.id', '=', 'transaction_sell_lines.transaction_id')
@@ -2639,6 +2671,7 @@ class ReportController extends Controller
      */
     public function getProfit($by = null)
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         $query = TransactionSellLine
@@ -2798,6 +2831,7 @@ class ReportController extends Controller
      */
     public function itemsReport()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         if (request()->ajax()) {
@@ -2964,6 +2998,7 @@ class ReportController extends Controller
      */
     public function purchaseReport()
     {
+        app()->setLocale(request()->query('lang'));
         if ((!auth()->user()->can('purchase.view') && !auth()->user()->can('purchase.create') && !auth()->user()->can('view_own_purchase')) || empty(config('constants.show_report_606'))) {
             abort(403, 'Unauthorized action.');
         }
@@ -3117,6 +3152,7 @@ class ReportController extends Controller
      */
     public function saleReport()
     {
+        app()->setLocale(request()->query('lang'));
         if ((!auth()->user()->can('sell.view') && !auth()->user()->can('sell.create') && !auth()->user()->can('direct_sell.access') && !auth()->user()->can('view_own_sell_only')) ||empty(config('constants.show_report_607'))) {
             abort(403, 'Unauthorized action.');
         }
@@ -3136,6 +3172,7 @@ class ReportController extends Controller
      */
     public function getStockValue()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         $end_date = \Carbon::now()->format('Y-m-d');
         $location_id = request()->input('location_id');

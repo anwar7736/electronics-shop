@@ -87,3 +87,10 @@
   </div>
 </section>
 @endsection
+@section('javascript')
+  <script>
+        $('#change_lang').change( function(){
+          window.location = "{{route('backup.index')}}?lang=" + $(this).val();
+      });
+  </script>
+@endsection

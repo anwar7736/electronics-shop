@@ -30,7 +30,7 @@
     @php
         $cat_code_enabled = isset($module_category_data['enable_taxonomy_code']) && !$module_category_data['enable_taxonomy_code'] ? false : true;
     @endphp
-    <input type="hidden" id="category_type" value="{{request()->get('type')}}">
+    <input type="hidden" id=" " value="{{request()->get('type')}}">
     @component('components.widget', ['class' => 'box-solid'])
             @slot('tool')
                 <div class="box-tools">
@@ -69,7 +69,19 @@
     <script>
         $(document).ready(function(){
 			$('#change_lang').change( function(){
-            window.location = "{{route('taxonomies.index')}}?type=product&lang=" + $(this).val();
+                let type = "<?php echo request()->get('type'); ?>";
+                if(type == 'product')
+                {
+                    window.location = "{{route('taxonomies.index')}}?type=product&lang=" + $(this).val();
+                }
+                else if(type == 'hrm_department')
+                {
+                    window.location = "{{route('taxonomies.index')}}?type=hrm_department&lang=" + $(this).val();
+                }
+                else if(type == 'hrm_designation')
+                {
+                    window.location = "{{route('taxonomies.index')}}?type=hrm_designation&lang=" + $(this).val();
+                }
             });
 		});
     </script>

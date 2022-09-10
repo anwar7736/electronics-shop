@@ -16,6 +16,7 @@ class InvoiceSchemeController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('invoice_settings.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -74,6 +75,7 @@ class InvoiceSchemeController extends Controller
      */
     public function create()
     {
+        
         if (!auth()->user()->can('invoice_settings.access')) {
             abort(403, 'Unauthorized action.');
         }

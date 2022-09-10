@@ -360,6 +360,10 @@
             }
         });
     });
-
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'woocommerce'}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

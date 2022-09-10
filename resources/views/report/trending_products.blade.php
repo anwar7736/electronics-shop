@@ -95,4 +95,9 @@
 @section('javascript')
     <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
     {!! $chart->script() !!}
+    <script>
+      $('#change_lang').change( function(){
+          window.location = "{{'trending-products'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

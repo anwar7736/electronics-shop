@@ -117,4 +117,9 @@
 @section('javascript')
 <script src="{{ asset('js/stock_adjustment.js?v=' . $asset_v) }}"></script>
 <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
+<script>
+      $('#change_lang').change( function(){
+          window.location = "{{'stock-adjustment-report'}}?lang=" + $(this).val();
+      });
+</script>
 @endsection

@@ -125,4 +125,9 @@
 
 @section('javascript')
     <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
+    <script>
+      $('#change_lang').change( function(){
+          window.location = "{{'items-report'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

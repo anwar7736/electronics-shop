@@ -94,3 +94,10 @@
 </section>
 <!-- /.content -->
 @endsection
+@section('javascript')
+  <script>
+        $('#change_lang').change( function(){
+          window.location = "{{route('printers.edit', $printer->id)}}?lang=" + $(this).val();
+      });
+  </script>
+@endsection

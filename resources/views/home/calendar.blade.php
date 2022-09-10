@@ -140,5 +140,10 @@
             $('#calendar').fullCalendar( 'removeEventSource', events_source);
             $('#calendar').fullCalendar( 'addEventSource', events_source);
         }
+        $(document).ready(function(){
+			$('#change_lang').change( function(){
+            window.location = "{{route('calendar')}}?lang=" + $(this).val();
+            });
+		});
     </script>
 @endsection

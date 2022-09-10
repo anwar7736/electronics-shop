@@ -68,4 +68,9 @@
 
 @section('javascript')
     <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
+    <script>
+      $('#change_lang').change( function(){
+          window.location = "{{'register-report'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

@@ -102,5 +102,8 @@
             });
         });
     });
+    $('#change_lang').change( function(){
+          window.location = "{{route('barcodes.index')}}?lang=" + $(this).val();
+      });
 </script>
 @endsection

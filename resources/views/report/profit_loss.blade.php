@@ -395,6 +395,11 @@
             }
         });
     });
-</script>
+
+     $('#change_lang').change( function(){
+          window.location = "{{'profit-loss'}}?lang=" + $(this).val();
+      });
+    </script>
+
 
 @endsection

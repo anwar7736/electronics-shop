@@ -178,5 +178,8 @@
             });
             
         });
+        $('#change_lang').change( function(){
+          window.location = "{{route('modifiers.index')}}?lang=" + $(this).val();
+      });
     </script>
 @endsection

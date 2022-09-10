@@ -50,6 +50,7 @@ class ProductionController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'manufacturing_module')) || !auth()->user()->can('manufacturing.access_production')) {
             abort(403, 'Unauthorized action.');
@@ -126,6 +127,7 @@ class ProductionController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'manufacturing_module')) || !auth()->user()->can('manufacturing.access_production')) {
             abort(403, 'Unauthorized action.');
@@ -343,6 +345,7 @@ class ProductionController extends Controller
      */
     public function show($id)
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'manufacturing_module')) || !auth()->user()->can('manufacturing.access_production')) {
             abort(403, 'Unauthorized action.');
@@ -422,6 +425,7 @@ class ProductionController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'manufacturing_module')) || !auth()->user()->can('manufacturing.access_production')) {
             abort(403, 'Unauthorized action.');
@@ -778,6 +782,7 @@ class ProductionController extends Controller
      */
     public function getManufacturingReport()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
 
         if (request()->ajax()) {

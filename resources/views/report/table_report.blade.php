@@ -112,5 +112,8 @@
                 table_report.ajax.reload();
             });
         })
+        $('#change_lang').change( function(){
+          window.location = "{{'table-report'}}?lang=" + $(this).val();
+      });
     </script>
 @endsection

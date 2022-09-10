@@ -396,4 +396,9 @@
     @endforeach
 @endif
 <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
+<script>
+      $('#change_lang').change( function(){
+          window.location = "{{'tax-report'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

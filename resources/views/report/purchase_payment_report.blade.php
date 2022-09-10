@@ -88,4 +88,9 @@
 @section('javascript')
     <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
     <script src="{{ asset('js/payment.js?v=' . $asset_v) }}"></script>
+    <script>
+      $('#change_lang').change( function(){
+          window.location = "{{'purchase-payment-report'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

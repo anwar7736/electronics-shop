@@ -15,6 +15,7 @@ class BarcodeController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('barcode_settings.access')) {
             abort(403, 'Unauthorized action.');
         }
@@ -61,6 +62,7 @@ class BarcodeController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('barcode_settings.access')) {
             abort(403, 'Unauthorized action.');
         }

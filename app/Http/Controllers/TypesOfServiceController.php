@@ -35,6 +35,7 @@ class TypesOfServiceController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('access_types_of_service')) {
              abort(403, 'Unauthorized action.');
         }

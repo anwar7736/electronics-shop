@@ -62,5 +62,10 @@
             ignore: [],
         });
     });
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'settings'}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

@@ -39,7 +39,7 @@ class TaxonomyController extends Controller
             abort(403, 'Unauthorized action.');
         }
 
-        if (request()->ajax()) {
+        if (request()->ajax()) { 
             $business_id = request()->session()->get('user.business_id');
 
             $category = Category::where('business_id', $business_id)

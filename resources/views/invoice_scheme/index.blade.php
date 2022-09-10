@@ -113,3 +113,10 @@
 <!-- /.content -->
 
 @endsection
+@section('javascript')
+  <script>
+        $('#change_lang').change( function(){
+          window.location = "{{route('invoice-schemes.index')}}?lang=" + $(this).val();
+      });
+  </script>
+@endsection

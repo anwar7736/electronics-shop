@@ -115,6 +115,11 @@
      
         return div;
     }
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{'view-sync-log'}}?lang=" + $(this).val();
+		});
+	});
 </script>
 
 @endsection

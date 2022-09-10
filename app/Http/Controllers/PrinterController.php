@@ -15,6 +15,7 @@ class PrinterController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('access_printers')) {
              abort(403, 'Unauthorized action.');
         }
@@ -58,6 +59,7 @@ class PrinterController extends Controller
      */
     public function create()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('access_printers')) {
              abort(403, 'Unauthorized action.');
         }
@@ -132,6 +134,7 @@ class PrinterController extends Controller
      */
     public function edit($id)
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('access_printers')) {
              abort(403, 'Unauthorized action.');
         }

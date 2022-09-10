@@ -109,5 +109,8 @@
             });
         });
     });
+    $('#change_lang').change( function(){
+          window.location = "{{route('printers.index')}}?lang=" + $(this).val();
+      });
 </script>
 @endsection

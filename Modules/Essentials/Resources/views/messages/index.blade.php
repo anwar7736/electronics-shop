@@ -123,5 +123,10 @@
             },
         });
 	}
+	$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('messages.index')}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

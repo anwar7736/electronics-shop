@@ -90,4 +90,9 @@
 @section('javascript')
     <script src="{{ asset('js/report.js?v=' . $asset_v) }}"></script>
     {!! $chart->script() !!}
+    <script>
+      $('#change_lang').change( function(){
+          window.location = "{{'expense-report'}}?lang=" + $(this).val();
+      });
+    </script>
 @endsection

@@ -173,6 +173,10 @@
 	<script type="text/javascript">
 		$(document).ready( function () {
 			calculateRecipeTotal();
+
+		$('#change_lang').change( function(){
+		window.location = "{{route('production.edit', $production_purchase->id)}}?lang=" + $(this).val();
+		});
 		});
 	</script>
 @endsection

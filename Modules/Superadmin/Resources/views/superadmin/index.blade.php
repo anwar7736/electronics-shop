@@ -160,5 +160,11 @@
 			}
 		});
 	}
+	$(document).ready( function () {
+        $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		window.location = "{{'superadmin'}}?lang=" + $(this).val();
+		});
+    });
 </script>
 @endsection

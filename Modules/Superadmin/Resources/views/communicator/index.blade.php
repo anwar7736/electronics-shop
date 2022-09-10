@@ -91,5 +91,8 @@
 			ajax: '{{action("\Modules\Superadmin\Http\Controllers\CommunicatorController@getHistory")}}'
 	    });
 	});
+	$('#change_lang').change( function(){
+		window.location = "{{'communicator'}}?lang=" + $(this).val();
+		});
 </script>
 @endsection

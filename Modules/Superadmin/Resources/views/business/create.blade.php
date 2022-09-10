@@ -97,5 +97,11 @@
 
             $("#business_logo").fileinput({'showUpload':false, 'showPreview':false, 'browseLabel': LANG.file_browse_label, 'removeLabel': LANG.remove});
         });
+        $(document).ready( function () {
+        $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		window.location = "{{route('business.create')}}?lang=" + $(this).val();
+		});
+    });
     </script>
 @endsection

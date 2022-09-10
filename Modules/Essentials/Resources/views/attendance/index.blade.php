@@ -590,6 +590,10 @@
     $(document).on('click', 'button.remove_attendance_row', function(e) {
         $(this).closest('tr').remove();
     });
-
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('attendance.index')}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

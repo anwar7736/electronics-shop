@@ -29,6 +29,7 @@ class BackUpController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('backup')) {
             abort(403, 'Unauthorized action.');
         }

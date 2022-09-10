@@ -537,6 +537,7 @@ class HomeController extends Controller
 
     public function getCalendar()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         $is_admin = $this->restUtil->is_admin(auth()->user(), $business_id);
         $is_superadmin = auth()->user()->can('superadmin');

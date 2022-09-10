@@ -40,6 +40,7 @@ class SuperadminSettingsController extends BaseController
      */
     public function edit()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('superadmin')) {
             abort(403, 'Unauthorized action.');
         }

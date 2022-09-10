@@ -21,6 +21,7 @@ class CommunicatorController extends BaseController
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('superadmin')) {
             abort(403, 'Unauthorized action.');
         }

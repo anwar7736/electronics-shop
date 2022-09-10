@@ -52,6 +52,7 @@ class WoocommerceController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         try {
             $business_id = request()->session()->get('business.id');
 
@@ -132,6 +133,7 @@ class WoocommerceController extends Controller
      */
     public function apiSettings()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('business.id');
 
         if (!(auth()->user()->can('superadmin') || ($this->moduleUtil->hasThePermissionInSubscription($business_id, 'woocommerce_module') && auth()->user()->can('woocommerce.access_woocommerce_api_settings')))) {
@@ -444,6 +446,7 @@ class WoocommerceController extends Controller
      */
     public function viewSyncLog()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('business.id');
         if (!(auth()->user()->can('superadmin') || $this->moduleUtil->hasThePermissionInSubscription($business_id, 'woocommerce_module'))) {
             abort(403, 'Unauthorized action.');

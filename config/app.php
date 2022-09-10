@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE', 'Asia/Kolkata'),
+    'timezone' => env('APP_TIMEZONE', 'Asia/Dhaka'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'bn'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'bn',
 
     /*
     |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'bn_BD',
 
     /*
     |--------------------------------------------------------------------------

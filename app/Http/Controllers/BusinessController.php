@@ -82,6 +82,7 @@ class BusinessController extends Controller
      */
     public function getRegister()
     {
+        app()->setLocale(request()->query('lang'));
         if (!config('constants.allow_registration')) {
             return redirect('/');
         }

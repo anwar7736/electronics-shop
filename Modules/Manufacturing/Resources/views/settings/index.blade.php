@@ -73,7 +73,11 @@
 <script type="text/javascript">
     $(document).ready( function () {
         $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		window.location = "{{route('settings.index')}}?lang=" + $(this).val();
+		});
     });
+    
 </script>
 
 @endsection

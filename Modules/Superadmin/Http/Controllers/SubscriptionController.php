@@ -48,6 +48,7 @@ class SubscriptionController extends BaseController
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('superadmin.access_package_subscriptions')) {
             abort(403, 'Unauthorized action.');
         }

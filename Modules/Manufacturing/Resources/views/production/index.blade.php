@@ -41,4 +41,11 @@
 @stop
 @section('javascript')
     @include('manufacturing::layouts.partials.common_script')
+    <script>
+    $(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('production.index')}}?lang=" + $(this).val();
+		});
+	});
+    </script>
 @endsection

@@ -43,6 +43,7 @@ class UserController extends Controller
      */
     public function getProfile()
     {
+        app()->setLocale(request()->query('lang'));
         $user_id = request()->session()->get('user.id');
         $user = User::where('id', $user_id)->with(['media'])->first();
         $config_languages = config('constants.langs');

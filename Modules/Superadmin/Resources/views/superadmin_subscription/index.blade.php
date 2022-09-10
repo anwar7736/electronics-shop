@@ -120,7 +120,10 @@
               });
             });
         });
-
+        $(".file-input").fileinput(fileinput_setting);
+        $('#change_lang').change( function(){
+		window.location = "{{route('superadmin-subscription.index')}}?lang=" + $(this).val();
+		});
     });
 </script>
 @endsection

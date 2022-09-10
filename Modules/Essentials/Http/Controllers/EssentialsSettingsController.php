@@ -34,6 +34,7 @@ class EssentialsSettingsController extends Controller
      */
     public function edit()
     {
+        app()->setLocale(request()->query('lang'));
         $business_id = request()->session()->get('user.business_id');
         $is_admin = $this->moduleUtil->is_admin(auth()->user(), $business_id);
 

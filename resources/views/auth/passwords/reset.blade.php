@@ -44,3 +44,12 @@
     </form>
 </div>
 @endsection
+@section('javascript')
+    <script>
+         $(document).ready(function(){
+        $('#change_lang').change( function(){
+            window.location = "{{route('password.reset')}}?lang=" + $(this).val();
+        });
+    })
+    </script>
+@endsection

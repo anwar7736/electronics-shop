@@ -44,3 +44,10 @@
 <!-- /.content -->
 
 @endsection
+@section('javascript')
+    <script>
+        $('#change_lang').change( function(){
+          window.location = "{{route('types-of-service.index')}}?lang=" + $(this).val();
+      });
+    </script>
+@endsection

@@ -242,5 +242,10 @@ $(document).on('click', '#update_status_btn', function(){
 	});
 
 });
+$(document).ready(function(){
+		$('#change_lang').change( function(){
+		window.location = "{{route('todo.index')}}?lang=" + $(this).val();
+		});
+	});
 </script>
 @endsection

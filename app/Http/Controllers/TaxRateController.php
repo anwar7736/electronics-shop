@@ -37,6 +37,7 @@ class TaxRateController extends Controller
      */
     public function index()
     {
+        app()->setLocale(request()->query('lang'));
         if (!auth()->user()->can('tax_rate.view') && !auth()->user()->can('tax_rate.create')) {
             abort(403, 'Unauthorized action.');
         }
