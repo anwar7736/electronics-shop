@@ -25,7 +25,9 @@ class WarrantyController extends Controller
             return Datatables::of($warranties)
                 ->addColumn(
                     'action',
-                    '<button data-href="{{action(\'WarrantyController@edit\', [$id])}}" class="btn btn-xs btn-primary btn-modal" data-container=".view_modal"><i class="glyphicon glyphicon-edit"></i> @lang("messages.edit")</button>'
+                    '<button data-href="{{action(\'WarrantyController@edit\', [$id])}}" class="btn btn-xs btn-primary btn-modal" data-container=".view_modal"><i class="glyphicon glyphicon-edit"></i> @lang("messages.edit")</button>
+                    <button data-href="{{action(\'WarrantyController@destroy\', [$id])}}" class="btn btn-xs btn-danger delete_warranty_button" data-container=""><i class="glyphicon glyphicon-trash"></i> @lang("messages.delete")</button>
+                    '
                  )
                  ->removeColumn('id')
                  ->editColumn('duration', function ($row) {
@@ -147,8 +149,11 @@ class WarrantyController extends Controller
      * @param  \App\Warranty  $warranty
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Warranty $warranty)
+    public function destroy($id)
     {
-        //
+        Warranty::destroy($id);
+        return $output = ['success' => true,
+                        'msg' => __("lang_v1.deleted_success")
+                    ];
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 03:33 PM
+-- Generation Time: Sep 12, 2022 at 05:08 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,6 +40,13 @@ CREATE TABLE `accounts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `business_id`, `name`, `account_number`, `account_type_id`, `note`, `created_by`, `is_closed`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'asdffd', '1234545456', 1, NULL, 1, 1, NULL, '2022-09-12 15:03:01', '2022-09-12 15:03:35');
 
 -- --------------------------------------------------------
 
@@ -79,6 +86,13 @@ CREATE TABLE `account_types` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `account_types`
+--
+
+INSERT INTO `account_types` (`id`, `name`, `parent_account_type_id`, `business_id`, `created_at`, `updated_at`) VALUES
+(1, 'Anwar Hossain', NULL, 1, '2022-09-12 15:02:39', '2022-09-12 15:02:39');
 
 -- --------------------------------------------------------
 
@@ -179,56 +193,31 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subj
 (73, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-03 03:48:15', '2022-09-03 03:48:15'),
 (74, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-03 04:11:03', '2022-09-03 04:11:03'),
 (75, 'default', 'edited', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-03 08:37:07', '2022-09-03 08:37:07'),
-(76, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-04 06:36:54', '2022-09-04 06:36:54'),
-(77, 'default', 'added', 9, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-04 10:11:10', '2022-09-04 10:11:10'),
-(78, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-04 10:13:17', '2022-09-04 10:13:17'),
-(79, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-04 10:40:33', '2022-09-04 10:40:33'),
-(80, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-04 11:42:44', '2022-09-04 11:42:44'),
-(81, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 04:28:34', '2022-09-05 04:28:34'),
-(82, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 04:57:05', '2022-09-05 04:57:05'),
-(83, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 05:02:21', '2022-09-05 05:02:21'),
-(84, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 05:02:40', '2022-09-05 05:02:40'),
-(85, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 05:02:56', '2022-09-05 05:02:56'),
-(86, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 05:21:50', '2022-09-05 05:21:50'),
-(87, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 05:24:16', '2022-09-05 05:24:16'),
-(88, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:17:23', '2022-09-05 07:17:23'),
-(89, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:20:08', '2022-09-05 07:20:08'),
-(90, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:20:14', '2022-09-05 07:20:14'),
-(91, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:20:22', '2022-09-05 07:20:22'),
-(92, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:20:29', '2022-09-05 07:20:29'),
-(93, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:20:41', '2022-09-05 07:20:41'),
-(94, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:33:58', '2022-09-05 07:33:58'),
-(95, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 07:34:45', '2022-09-05 07:34:45'),
-(96, 'default', 'added', 3, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"final\",\"payment_status\":\"paid\",\"final_total\":0}}', '2022-09-05 08:06:33', '2022-09-05 08:06:33'),
-(97, 'default', 'added', 4, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"payment_status\":\"due\"}}', '2022-09-05 09:27:05', '2022-09-05 09:27:05'),
-(98, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 09:03:25', '2022-09-05 09:03:25'),
-(99, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 09:04:18', '2022-09-05 09:04:18'),
-(100, 'default', 'added', 5, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":15000}}', '2022-09-05 09:51:45', '2022-09-05 09:51:45'),
-(101, 'default', 'edited', 5, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":15000},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":\"15000.0000\"}}', '2022-09-05 09:52:35', '2022-09-05 09:52:35'),
-(102, 'default', 'payment_edited', 5, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"paid\",\"final_total\":\"15000.0000\"},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":\"15000.0000\"}}', '2022-09-05 09:53:25', '2022-09-05 09:53:25'),
-(103, 'default', 'added', 6, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"final\",\"payment_status\":\"paid\",\"final_total\":15000}}', '2022-09-05 09:54:44', '2022-09-05 09:54:44'),
-(104, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 10:50:23', '2022-09-05 10:50:23'),
-(105, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 10:52:00', '2022-09-05 10:52:00'),
-(106, 'default', 'login', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 10:58:00', '2022-09-05 10:58:00'),
-(107, 'default', 'logout', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 11:15:05', '2022-09-05 11:15:05'),
-(108, 'default', 'login', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 11:36:24', '2022-09-05 11:36:24'),
-(109, 'default', 'logout', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 11:38:25', '2022-09-05 11:38:25'),
-(110, 'default', 'login', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 11:38:34', '2022-09-05 11:38:34'),
-(111, 'default', 'login', 6, 'App\\User', 6, 'App\\User', '[]', '2022-09-05 11:39:03', '2022-09-05 11:39:03'),
-(112, 'default', 'login', 7, 'App\\User', 7, 'App\\User', '[]', '2022-09-05 11:51:19', '2022-09-05 11:51:19'),
-(113, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 11:52:01', '2022-09-05 11:52:01'),
-(114, 'default', 'login', 7, 'App\\User', 7, 'App\\User', '[]', '2022-09-05 11:52:56', '2022-09-05 11:52:56'),
-(115, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 11:59:10', '2022-09-05 11:59:10'),
-(116, 'default', 'logout', 7, 'App\\User', 7, 'App\\User', '[]', '2022-09-05 12:19:45', '2022-09-05 12:19:45'),
-(117, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-05 12:20:04', '2022-09-05 12:20:04'),
-(118, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:06:44', '2022-09-06 10:06:44'),
-(119, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:13:24', '2022-09-06 10:13:24'),
-(120, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:13:35', '2022-09-06 10:13:35'),
-(121, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:19:22', '2022-09-06 10:19:22'),
-(122, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:20:25', '2022-09-06 10:20:25'),
-(123, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:36:43', '2022-09-06 10:36:43'),
-(124, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 10:40:26', '2022-09-06 10:40:26'),
-(125, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-06 11:48:44', '2022-09-06 11:48:44');
+(76, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-12 12:43:22', '2022-09-12 12:43:22'),
+(77, 'default', 'added', 6, 'App\\User', 1, 'App\\User', '[]', '2022-09-12 12:52:44', '2022-09-12 12:52:44'),
+(78, 'default', 'login', 7, 'App\\User', 7, 'App\\User', '[]', '2022-09-12 12:57:25', '2022-09-12 12:57:25'),
+(79, 'default', 'added', 10, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 13:05:07', '2022-09-12 13:05:07'),
+(80, 'default', 'edited', 10, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 13:05:47', '2022-09-12 13:05:47'),
+(81, 'default', 'edited', 10, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 13:05:55', '2022-09-12 13:05:55'),
+(82, 'default', 'added', 11, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 13:06:27', '2022-09-12 13:06:27'),
+(83, 'default', 'edited', 11, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 13:06:56', '2022-09-12 13:06:56'),
+(84, 'default', 'added', 12, 'App\\Contact', 1, 'App\\User', '[]', '2022-09-12 14:46:56', '2022-09-12 14:46:56'),
+(85, 'default', 'added', 2, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":1}}', '2022-09-12 14:47:06', '2022-09-12 14:47:06'),
+(86, 'default', 'edited', 2, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":1},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":\"1.0000\"}}', '2022-09-12 14:48:13', '2022-09-12 14:48:13'),
+(87, 'default', 'payment_edited', 2, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"paid\",\"final_total\":\"1.0000\"},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"due\",\"final_total\":\"1.0000\"}}', '2022-09-12 14:48:23', '2022-09-12 14:48:23'),
+(88, 'default', 'added', 3, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase_return\",\"final_total\":1}}', '2022-09-12 14:50:04', '2022-09-12 14:50:04'),
+(89, 'default', 'edited', 3, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase_return\",\"payment_status\":\"due\",\"final_total\":0},\"old\":{\"type\":\"purchase_return\",\"payment_status\":\"due\",\"final_total\":\"1.0000\"}}', '2022-09-12 14:50:15', '2022-09-12 14:50:15'),
+(90, 'default', 'edited', 2, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"partial\",\"final_total\":245},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"paid\",\"final_total\":\"1.0000\"}}', '2022-09-12 14:51:34', '2022-09-12 14:51:34'),
+(91, 'default', 'payment_edited', 2, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"paid\",\"final_total\":\"245.0000\"},\"old\":{\"type\":\"purchase\",\"status\":\"received\",\"payment_status\":\"partial\",\"final_total\":\"245.0000\"}}', '2022-09-12 14:52:04', '2022-09-12 14:52:04'),
+(92, 'default', 'added', 4, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"final\",\"payment_status\":\"paid\",\"final_total\":245}}', '2022-09-12 14:52:43', '2022-09-12 14:52:43'),
+(93, 'default', 'added', 5, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"draft\",\"final_total\":245}}', '2022-09-12 14:54:58', '2022-09-12 14:54:58'),
+(94, 'default', 'edited', 5, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"draft\",\"payment_status\":\"due\",\"final_total\":245},\"old\":{\"type\":\"sell\",\"status\":\"draft\",\"final_total\":\"245.0000\"}}', '2022-09-12 14:55:38', '2022-09-12 14:55:38'),
+(95, 'default', 'added', 6, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"draft\",\"sub_status\":\"quotation\",\"final_total\":245}}', '2022-09-12 14:56:09', '2022-09-12 14:56:09'),
+(96, 'default', 'edited', 6, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"type\":\"sell\",\"status\":\"draft\",\"sub_status\":\"quotation\",\"payment_status\":\"due\",\"final_total\":245},\"old\":{\"type\":\"sell\",\"status\":\"draft\",\"sub_status\":\"quotation\",\"final_total\":\"245.0000\"}}', '2022-09-12 14:56:26', '2022-09-12 14:56:26'),
+(97, 'default', 'added', 8, 'App\\Transaction', 1, 'App\\User', '[]', '2022-09-12 15:00:42', '2022-09-12 15:00:42'),
+(98, 'default', 'added', 9, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"payment_status\":\"due\"}}', '2022-09-12 15:01:34', '2022-09-12 15:01:34'),
+(99, 'default', 'edited', 9, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"payment_status\":\"due\"}}', '2022-09-12 15:01:49', '2022-09-12 15:01:49'),
+(100, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-12 15:07:48', '2022-09-12 15:07:48');
 
 -- --------------------------------------------------------
 
@@ -316,8 +305,9 @@ CREATE TABLE `brands` (
 INSERT INTO `brands` (`id`, `business_id`, `name`, `description`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 3, 'Shoe Park', 'Shoe Park', 3, NULL, '2021-11-01 10:25:34', '2021-11-01 10:25:34'),
 (2, 5, 'Khandaker', NULL, 5, NULL, '2022-06-02 14:14:09', '2022-06-02 14:14:09'),
-(3, 1, 'Printer', NULL, 1, NULL, '2022-09-05 05:38:44', '2022-09-05 05:38:44'),
-(4, 1, 'HP', NULL, 1, NULL, '2022-09-05 05:39:34', '2022-09-05 05:39:34');
+(3, 1, 'Lactogen', NULL, 1, NULL, '2022-09-12 13:09:04', '2022-09-12 14:02:35'),
+(4, 1, 'Cerelac', NULL, 1, '2022-09-12 14:02:48', '2022-09-12 14:02:43', '2022-09-12 14:02:48'),
+(5, 1, 'Cerelac', NULL, 1, NULL, '2022-09-12 14:02:53', '2022-09-12 14:02:53');
 
 -- --------------------------------------------------------
 
@@ -411,12 +401,12 @@ CREATE TABLE `business` (
 --
 
 INSERT INTO `business` (`id`, `name`, `currency_id`, `start_date`, `tax_number_1`, `tax_label_1`, `tax_number_2`, `tax_label_2`, `default_sales_tax`, `default_profit_percent`, `owner_id`, `time_zone`, `fy_start_month`, `accounting_method`, `default_sales_discount`, `sell_price_tax`, `logo`, `sku_prefix`, `enable_product_expiry`, `expiry_type`, `on_product_expiry`, `stop_selling_before`, `enable_tooltip`, `purchase_in_diff_currency`, `purchase_currency_id`, `p_exchange_rate`, `transaction_edit_days`, `stock_expiry_alert_days`, `keyboard_shortcuts`, `pos_settings`, `manufacturing_settings`, `essentials_settings`, `woocommerce_api_settings`, `woocommerce_wh_oc_secret`, `woocommerce_wh_ou_secret`, `woocommerce_wh_od_secret`, `woocommerce_wh_or_secret`, `weighing_scale_setting`, `enable_brand`, `enable_category`, `enable_sub_category`, `enable_price_tax`, `enable_purchase_status`, `enable_lot_number`, `default_unit`, `enable_sub_units`, `enable_racks`, `enable_row`, `enable_position`, `enable_editing_product_from_purchase`, `sales_cmsn_agnt`, `item_addition_method`, `enable_inline_tax`, `currency_symbol_placement`, `enabled_modules`, `date_format`, `time_format`, `ref_no_prefixes`, `theme_color`, `created_by`, `enable_rp`, `rp_name`, `amount_for_unit_rp`, `min_order_total_for_rp`, `max_rp_per_order`, `redeem_amount_per_unit_rp`, `min_order_total_for_redeem`, `min_redeem_point`, `max_redeem_point`, `rp_expiry_period`, `rp_expiry_type`, `email_settings`, `sms_settings`, `custom_labels`, `common_settings`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'confidence shop', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 1, 'Asia/Dhaka', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', NULL, NULL, '{\"woocommerce_app_url\":null,\"woocommerce_consumer_key\":null,\"woocommerce_consumer_secret\":null,\"location_id\":\"1\",\"default_tax_class\":null,\"product_tax_type\":\"inc\",\"default_selling_price_group\":null,\"sync_description_as\":\"long\",\"product_fields_for_create\":[\"category\",\"quantity\"],\"product_fields_for_update\":[\"name\",\"price\",\"category\",\"quantity\"],\"woocommerce_wh_oc_secret\":null,\"woocommerce_wh_ou_secret\":null,\"woocommerce_wh_od_secret\":null,\"woocommerce_wh_or_secret\":null}', NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 1, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\",\"account\",\"tables\",\"modifiers\",\"service_staff\",\"booking\",\"kitchen\",\"subscription\",\"types_of_service\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2021-04-22 23:34:37', '2022-09-05 09:51:45'),
+(1, 'confidence shop', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 1, 'Asia/Dhaka', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', '{\"ref_no_prefix\":null,\"disable_editing_ingredient_qty\":true,\"enable_updating_product_price\":true}', NULL, NULL, NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 1, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\",\"account\",\"tables\",\"modifiers\",\"service_staff\",\"booking\",\"kitchen\",\"subscription\",\"types_of_service\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2021-04-22 23:34:37', '2022-09-12 15:07:28'),
 (2, 'Supreme', 134, '2021-05-05', NULL, NULL, NULL, NULL, NULL, 25.00, 2, 'Asia/Kolkata', 1, 'fifo', NULL, 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 'Shoe Park', 134, '2021-10-20', NULL, NULL, NULL, NULL, NULL, 25.00, 3, 'Asia/Dhaka', 1, 'fifo', NULL, 'includes', '1634747155_696.png', NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 'Chicken Bite', 134, '2022-01-26', NULL, NULL, NULL, NULL, NULL, 25.00, 4, 'Asia/Dhaka', 1, 'fifo', NULL, 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2022-01-26 13:49:43', '2022-01-26 13:49:43'),
 (5, 'Khandakar Electronics', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 5, 'Asia/Dhaka', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\",\"account\",\"tables\",\"modifiers\",\"service_staff\",\"booking\",\"types_of_service\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"enable_product_warranty\":\"1\",\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2022-05-29 22:18:42', '2022-06-01 12:51:41'),
-(7, 'Md Anwar Hossain', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 7, 'Asia/Kolkata', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2022-09-05 11:50:57', '2022-09-05 12:17:00');
+(6, 'Anwar Electronics Shop', 134, NULL, NULL, NULL, NULL, NULL, NULL, 25.00, 7, 'Asia/Dhaka', 1, 'fifo', NULL, 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2022-09-12 12:57:16', '2022-09-12 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -467,7 +457,7 @@ INSERT INTO `business_locations` (`id`, `business_id`, `location_id`, `name`, `l
 (3, 3, 'BL0001', 'Shoe Park', 'dhaka', 'bangladesh', 'Shyamoli Square Plot # 24/1-2, Mirpur Rd', 'Dhaka', '1207', 3, 3, 3, NULL, 1, 'browser', NULL, '01754493353', '01746881387', '', 'http://shoeparkbd.com/', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2021-10-20 15:55:56', '2021-10-20 15:55:56'),
 (4, 4, 'BL0001', 'Chicken Bite', 'dhaka', 'Bangladesh', 'Adabar', 'Dhaka', '1207', 4, 4, 4, NULL, 1, 'browser', NULL, '01717401530', '01717401530', '', '', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (5, 5, 'BL0001', 'Khandakar Electronics', 'dhaka', 'Bangladesh', 'Dhaka', 'dhaka', '1207', 5, 5, 5, NULL, 1, 'browser', NULL, '+8801611306400', '', '', '', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(7, 7, 'BL0001', 'Md Anwar Hossain', 'mohammadpur', 'Bangladesh', 'adabor', 'dhaka', '1207', 7, 7, 7, NULL, 1, 'browser', NULL, '', '', '', '', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(6, 6, 'BL0001', 'Anwar Electronics Shop', 'Adabor, Mohammadpur', 'Bangladesh', 'Dhaka 1207', 'Dhaka', '1207', 6, 6, 6, NULL, 1, 'browser', NULL, '', '', '', '', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2022-09-12 12:57:16', '2022-09-12 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -495,9 +485,8 @@ CREATE TABLE `cash_registers` (
 --
 
 INSERT INTO `cash_registers` (`id`, `business_id`, `location_id`, `user_id`, `status`, `closed_at`, `closing_amount`, `total_card_slips`, `total_cheques`, `closing_note`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 'close', '2022-09-05 13:46:13', '500.0000', 0, 0, NULL, '2021-07-01 08:26:00', '2022-09-05 07:46:13'),
-(2, 3, 3, 3, 'open', NULL, '0.0000', 0, 0, NULL, '2021-10-22 15:59:00', '2021-10-22 15:59:45'),
-(3, 1, 1, 1, 'open', NULL, '0.0000', 0, 0, NULL, '2022-09-05 07:46:00', '2022-09-05 07:46:25');
+(1, 1, 1, 1, 'open', NULL, '0.0000', 0, 0, NULL, '2021-07-01 08:26:00', '2021-07-01 08:26:33'),
+(2, 3, 3, 3, 'open', NULL, '0.0000', 0, 0, NULL, '2021-10-22 15:59:00', '2021-10-22 15:59:45');
 
 -- --------------------------------------------------------
 
@@ -523,8 +512,7 @@ CREATE TABLE `cash_register_transactions` (
 
 INSERT INTO `cash_register_transactions` (`id`, `cash_register_id`, `amount`, `pay_method`, `type`, `transaction_type`, `transaction_id`, `created_at`, `updated_at`) VALUES
 (1, 1, '500.0000', 'cash', 'credit', 'initial', NULL, '2021-07-01 08:26:34', '2021-07-01 08:26:34'),
-(2, 2, '10.0000', 'cash', 'credit', 'initial', NULL, '2021-10-22 15:59:45', '2021-10-22 15:59:45'),
-(3, 3, '1000.0000', 'cash', 'credit', 'initial', NULL, '2022-09-05 07:46:25', '2022-09-05 07:46:25');
+(2, 2, '10.0000', 'cash', 'credit', 'initial', NULL, '2021-10-22 15:59:45', '2021-10-22 15:59:45');
 
 -- --------------------------------------------------------
 
@@ -554,7 +542,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `business_id`, `short_code`, `parent_id`, `created_by`, `woocommerce_cat_id`, `category_type`, `description`, `slug`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 'Loafer', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, NULL, '2021-10-22 15:58:42', '2021-10-22 15:58:56'),
-(2, 'Lofer', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, '2021-11-01 11:03:30', '2021-11-01 11:03:24', '2021-11-01 11:03:30'),
+(2, 'Lofer', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, NULL, '2021-11-01 11:03:24', '2021-11-01 11:03:30'),
 (3, 'Tarcel', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, NULL, '2021-11-01 11:03:53', '2021-11-01 11:03:53'),
 (4, 'Boot', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, NULL, '2021-11-01 11:04:00', '2021-11-01 11:04:00'),
 (5, 'Leather Convers', 3, NULL, 0, 3, NULL, 'product', NULL, NULL, NULL, '2021-11-01 11:04:23', '2021-11-01 11:04:23'),
@@ -587,7 +575,12 @@ INSERT INTO `categories` (`id`, `name`, `business_id`, `short_code`, `parent_id`
 (32, 'Smart Fan 36\" (Allu)', 5, 'CF', 0, 5, NULL, 'product', NULL, NULL, NULL, '2022-06-02 14:23:01', '2022-06-02 14:23:01'),
 (33, 'Smart Fan 36\" (Steel)', 5, 'CF', 0, 5, NULL, 'product', NULL, NULL, NULL, '2022-06-02 14:23:21', '2022-06-02 14:23:21'),
 (34, 'Hi-Speed 24\" (Steel)', 5, 'CF', 0, 5, NULL, 'product', NULL, NULL, NULL, '2022-06-02 14:23:48', '2022-06-02 14:23:48'),
-(35, 'Hi-Speed 24\" (Allu)', 5, 'CF', 0, 5, NULL, 'product', NULL, NULL, NULL, '2022-06-02 14:24:15', '2022-06-02 14:24:15');
+(35, 'Hi-Speed 24\" (Allu)', 5, 'CF', 0, 5, NULL, 'product', NULL, NULL, NULL, '2022-06-02 14:24:15', '2022-06-02 14:24:15'),
+(36, 'Electronics', 1, 'ELC', 0, 1, NULL, 'product', 'DEC', NULL, NULL, '2022-09-12 13:14:18', '2022-09-12 13:46:19'),
+(37, 'Laptop', 1, 'LBP01', 0, 1, NULL, 'product', 'ABC', NULL, NULL, '2022-09-12 13:14:43', '2022-09-12 13:45:47'),
+(38, 'Electronics', 6, 'CAT', 0, 6, NULL, 'product', NULL, NULL, NULL, '2022-09-12 13:16:57', '2022-09-12 13:59:51'),
+(39, '@$', 6, 'DR', 0, 6, NULL, 'product', 'asdfa', NULL, '2022-09-12 13:59:30', '2022-09-12 13:47:48', '2022-09-12 13:59:30'),
+(40, 'Television', 6, 'TV', 0, 6, NULL, 'product', NULL, NULL, NULL, '2022-09-12 14:00:08', '2022-09-12 14:00:08');
 
 -- --------------------------------------------------------
 
@@ -671,8 +664,10 @@ INSERT INTO `contacts` (`id`, `business_id`, `type`, `supplier_business_name`, `
 (6, 4, 'customer', NULL, 'Walk-In Customer', NULL, NULL, NULL, NULL, NULL, 'CO0001', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '0.0000', 4, '0.0000', 0, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (7, 5, 'customer', NULL, 'Walk-In Customer', NULL, NULL, NULL, NULL, NULL, 'CO0001', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '0.0000', 5, '0.0000', 0, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
 (8, 5, 'customer', 'China Electric', 'Mr. Nayan  ', 'Mr.', 'Nayan', NULL, NULL, NULL, 'CO0002', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '01724-211690', NULL, NULL, NULL, NULL, NULL, 5, '0.0000', 0, 0, 0, 0, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-02 14:47:36', '2022-06-02 14:47:36'),
-(9, 1, 'supplier', NULL, ' Md Anwar Hossain', NULL, 'Md', 'Anwar', 'Hossain', 'anwar@gmail.com', 'CO0003', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '012525', NULL, NULL, NULL, NULL, NULL, 1, '0.0000', 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 10:11:10', '2022-09-04 10:11:10'),
-(11, 7, 'customer', NULL, 'Walk-In Customer', NULL, NULL, NULL, NULL, NULL, 'CO0001', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '0.0000', 7, '0.0000', 0, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(9, 6, 'customer', NULL, 'Walk-In Customer', NULL, NULL, NULL, NULL, NULL, 'CO0001', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '0.0000', 7, '0.0000', 0, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(10, 1, 'supplier', NULL, ' Anwar  Hossain', NULL, 'Anwar', NULL, 'Hossain', 'anwar@gmail.com', 'CO0003', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12', '01', NULL, NULL, NULL, NULL, NULL, 1, '0.0000', 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 13:06:13', '2022-09-12 13:05:07', '2022-09-12 13:06:13'),
+(11, 1, 'customer', NULL, ' Anwar  Hossain', NULL, 'Anwar', NULL, 'Hossain', 'anwar@gmail.com', 'CO0004', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-06', '01', NULL, NULL, NULL, NULL, NULL, 1, '0.0000', 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 13:07:00', '2022-09-12 13:06:27', '2022-09-12 13:07:00'),
+(12, 1, 'supplier', NULL, ' Anwar  Hossain', NULL, 'Anwar', NULL, 'Hossain', 'anwar@gmail.com', 'CO0005', 'active', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '01', NULL, NULL, NULL, NULL, NULL, 1, '0.0000', 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 14:46:56', '2022-09-12 14:46:56');
 
 -- --------------------------------------------------------
 
@@ -1113,13 +1108,6 @@ CREATE TABLE `essentials_shifts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `essentials_shifts`
---
-
-INSERT INTO `essentials_shifts` (`id`, `name`, `type`, `business_id`, `start_time`, `end_time`, `holidays`, `created_at`, `updated_at`) VALUES
-(1, 'Md Anwar Hossain', 'fixed_shift', 1, '10:15:00', '18:15:00', '[\"friday\"]', '2022-09-05 06:15:47', '2022-09-05 06:16:38');
-
 -- --------------------------------------------------------
 
 --
@@ -1195,13 +1183,6 @@ CREATE TABLE `essentials_user_shifts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `essentials_user_shifts`
---
-
-INSERT INTO `essentials_user_shifts` (`id`, `user_id`, `essentials_shift_id`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2022-09-05', NULL, '2022-09-05 06:16:04', '2022-09-05 06:16:04');
-
 -- --------------------------------------------------------
 
 --
@@ -1223,7 +1204,7 @@ CREATE TABLE `expense_categories` (
 --
 
 INSERT INTO `expense_categories` (`id`, `name`, `business_id`, `code`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Employee Salary', 1, 'EMPSAL', NULL, '2022-09-05 09:27:42', '2022-09-05 09:28:01');
+(1, 'Md Anwar Hossain', 1, 'adafd', '2022-09-12 15:02:22', '2022-09-12 15:02:13', '2022-09-12 15:02:22');
 
 -- --------------------------------------------------------
 
@@ -1334,7 +1315,7 @@ INSERT INTO `invoice_layouts` (`id`, `name`, `header_text`, `invoice_no_prefix`,
 (3, 'Default', NULL, 'Invoice No.', NULL, 'Invoice', NULL, NULL, NULL, NULL, NULL, '', '', NULL, 'Subtotal', 'Discount', 'Tax', 'Total', NULL, 'Total Due', 'Total Paid', 0, NULL, NULL, 'Date', NULL, 1, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 'Product', 'Quantity', 'Unit Price', 'Subtotal', NULL, NULL, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'Customer', 0, '#000000', '', NULL, NULL, 1, 3, 'classic', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 'Default', NULL, 'Invoice No.', NULL, 'Invoice', NULL, NULL, NULL, NULL, NULL, '', '', NULL, 'Subtotal', 'Discount', 'Tax', 'Total', NULL, 'Total Due', 'Total Paid', 0, NULL, NULL, 'Date', NULL, 1, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 'Product', 'Quantity', 'Unit Price', 'Subtotal', NULL, NULL, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'Customer', 0, '#000000', '', NULL, NULL, 1, 4, 'classic', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (5, 'Default', NULL, 'Invoice No.', NULL, 'Invoice', NULL, NULL, NULL, NULL, NULL, '', '', NULL, 'Subtotal', 'Discount', 'Tax', 'Total', NULL, 'Total Due', 'Total Paid', 0, NULL, NULL, 'Date', NULL, 1, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 'Product', 'Quantity', 'Unit Price', 'Subtotal', NULL, NULL, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'Customer', 0, '#000000', '', NULL, NULL, 1, 5, 'classic', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(7, 'Default', NULL, 'Invoice No.', NULL, 'Invoice', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Subtotal', 'Discount', 'Tax', 'Total', NULL, 'Total Due', 'Total Paid', 0, NULL, NULL, 'Date', NULL, 1, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 'Product', 'Quantity', 'Unit Price', 'Subtotal', NULL, NULL, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'Customer', 0, '#000000', NULL, NULL, '{\"due_date_label\":null,\"total_quantity_label\":null,\"num_to_word_format\":\"international\"}', 1, 7, 'classic', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '2022-09-05 11:50:57', '2022-09-05 12:18:24');
+(6, 'Default', NULL, 'Invoice No.', NULL, 'Invoice', NULL, NULL, NULL, NULL, NULL, '', '', NULL, 'Subtotal', 'Discount', 'Tax', 'Total', NULL, 'Total Due', 'Total Paid', 0, NULL, NULL, 'Date', NULL, 1, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 'Product', 'Quantity', 'Unit Price', 'Subtotal', NULL, NULL, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'Customer', 0, '#000000', '', NULL, NULL, 1, 6, 'classic', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '2022-09-12 12:57:16', '2022-09-12 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -1361,12 +1342,12 @@ CREATE TABLE `invoice_schemes` (
 --
 
 INSERT INTO `invoice_schemes` (`id`, `business_id`, `name`, `scheme_type`, `prefix`, `start_number`, `invoice_count`, `total_digits`, `is_default`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Default', 'blank', '', 1, 2, 4, 1, '2021-04-22 23:34:37', '2022-09-05 09:54:44'),
+(1, 1, 'Default', 'blank', '', 1, 1, 4, 1, '2021-04-22 23:34:37', '2022-09-12 14:52:43'),
 (2, 2, 'Default', 'blank', '', 1, 0, 4, 1, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 3, 'Default', 'blank', '', 1, 0, 4, 1, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 4, 'Default', 'blank', '', 1, 0, 4, 1, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (5, 5, 'Default', 'blank', '', 1, 0, 4, 1, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(7, 7, 'Default', 'blank', '', 1, 0, 4, 1, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(6, 6, 'Default', 'blank', '', 1, 0, 4, 1, '2022-09-12 12:57:16', '2022-09-12 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -1501,6 +1482,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (38, '2018_01_09_111005_modify_payment_status_in_transactions_table', 1),
 (39, '2018_01_09_111109_add_paid_on_column_to_transaction_payments_table', 1),
 (40, '2018_01_25_172439_add_printer_related_fields_to_business_locations_table', 1),
+(41, '2018_01_27_184322_create_printers_table', 1),
 (42, '2018_01_30_181442_create_cash_registers_table', 1),
 (43, '2018_01_31_125836_create_cash_register_transactions_table', 1),
 (44, '2018_02_07_173326_modify_business_table', 1),
@@ -1775,8 +1757,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (313, '2019_08_12_114610_add_ingredient_waste_percent_columns', 6),
 (314, '2019_11_05_115136_create_ingredient_groups_table', 6),
 (315, '2020_02_22_120303_add_column_to_mfg_recipe_ingredients_table', 6),
-(316, '2020_08_19_103831_add_production_cost_type_to_recipe_and_transaction_table', 6),
-(317, '2018_01_27_184322_create_printers_table', 7);
+(316, '2020_08_19_103831_add_production_cost_type_to_recipe_and_transaction_table', 6);
 
 -- --------------------------------------------------------
 
@@ -1795,7 +1776,8 @@ CREATE TABLE `model_has_permissions` (
 --
 
 INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) VALUES
-(80, 'App\\User', 1);
+(80, 'App\\User', 1),
+(80, 'App\\User', 6);
 
 -- --------------------------------------------------------
 
@@ -1815,11 +1797,12 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\User', 1),
+(2, 'App\\User', 6),
 (3, 'App\\User', 2),
 (5, 'App\\User', 3),
 (7, 'App\\User', 4),
 (9, 'App\\User', 5),
-(15, 'App\\User', 7);
+(11, 'App\\User', 7);
 
 -- --------------------------------------------------------
 
@@ -1866,15 +1849,15 @@ CREATE TABLE `notification_templates` (
 --
 
 INSERT INTO `notification_templates` (`id`, `business_id`, `template_for`, `email_body`, `sms_body`, `whatsapp_text`, `subject`, `cc`, `bcc`, `auto_send`, `auto_send_sms`, `auto_send_wa_notif`, `created_at`, `updated_at`) VALUES
-(1, 1, 'new_sale', '<p>Dear {contact_name},</p>\r\n<p>Your invoice number is {invoice_number}<br />Total amount: {total_amount}<br />Paid amount: {received_amount}</p>\r\n<p>Thank you for shopping with us.</p>\r\n<p>{business_logo}</p>\r\n<p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(2, 1, 'payment_received', '<p>Dear {contact_name},</p>\r\n<p>We have received a payment of {received_amount}</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(3, 1, 'payment_reminder', '<p>Dear {contact_name},</p>\r\n<p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(4, 1, 'new_booking', '<p>Dear {contact_name},</p>\r\n<p>Your booking is confirmed</p>\r\n<p>Date: {start_time} to {end_time}</p>\r\n<p>Table: {table}</p>\r\n<p>Location: {location}</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, Your booking is confirmed. Date: {start_time} to {end_time}, Table: {table}, Location: {location}', NULL, 'Booking Confirmed - {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(5, 1, 'new_order', '<p>Dear {contact_name},</p>\r\n<p>We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'Dear {contact_name}, We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible. {business_name}', NULL, 'New Order, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(6, 1, 'payment_paid', '<p>Dear {contact_name},</p>\r\n<p>We have paid amount {paid_amount} again invoice number {order_ref_number}.<br />Kindly note it down.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'We have paid amount {paid_amount} again invoice number {order_ref_number}.\r\n                    Kindly note it down. {business_name}', NULL, 'Payment Paid, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(7, 1, 'items_received', '<p>Dear {contact_name},</p>\r\n<p>We have received all items from invoice reference number {order_ref_number}. Thank you for processing it.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'We have received all items from invoice reference number {order_ref_number}. Thank you for processing it. {business_name}', NULL, 'Items received, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(8, 1, 'items_pending', '<p>Dear {contact_name},<br />This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
-(9, 1, 'new_quotation', '<p>Dear {contact_name},</p>\r\n<p>Your quotation number is {invoice_number}<br />Total amount: {total_amount}</p>\r\n<p>Thank you for shopping with us.</p>\r\n<p>{business_logo}</p>\r\n<p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-05 06:14:25'),
+(1, 1, 'new_sale', '<p>Dear {contact_name},</p>\r\n<p>Your invoice number is {invoice_number}<br />Total amount: {total_amount}<br />Paid amount: {received_amount}</p>\r\n<p>Thank you for shopping with us.</p>\r\n<p>{business_logo}</p>\r\n<p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(2, 1, 'payment_received', '<p>Dear {contact_name},</p>\r\n<p>We have received a payment of {received_amount}</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(3, 1, 'payment_reminder', '<p>Dear {contact_name},</p>\r\n<p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(4, 1, 'new_booking', '<p>Dear {contact_name},</p>\r\n<p>Your booking is confirmed</p>\r\n<p>Date: {start_time} to {end_time}</p>\r\n<p>Table: {table}</p>\r\n<p>Location: {location}</p>\r\n<p>{business_logo}</p>', 'Dear {contact_name}, Your booking is confirmed. Date: {start_time} to {end_time}, Table: {table}, Location: {location}', NULL, 'Booking Confirmed - {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(5, 1, 'new_order', '<p>Dear {contact_name},</p>\r\n<p>We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'Dear {contact_name}, We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible. {business_name}', NULL, 'New Order, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(6, 1, 'payment_paid', '<p>Dear {contact_name},</p>\r\n<p>We have paid amount {paid_amount} again invoice number {order_ref_number}.<br />Kindly note it down.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'We have paid amount {paid_amount} again invoice number {order_ref_number}.\r\n                    Kindly note it down. {business_name}', NULL, 'Payment Paid, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(7, 1, 'items_received', '<p>Dear {contact_name},</p>\r\n<p>We have received all items from invoice reference number {order_ref_number}. Thank you for processing it.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'We have received all items from invoice reference number {order_ref_number}. Thank you for processing it. {business_name}', NULL, 'Items received, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(8, 1, 'items_pending', '<p>Dear {contact_name},<br />This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
+(9, 1, 'new_quotation', '<p>Dear {contact_name},</p>\r\n<p>Your quotation number is {invoice_number}<br />Total amount: {total_amount}</p>\r\n<p>Thank you for shopping with us.</p>\r\n<p>{business_logo}</p>\r\n<p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2021-04-22 23:34:37', '2022-09-12 15:07:22'),
 (10, 2, 'new_sale', '<p>Dear {contact_name},</p>\n\n                    <p>Your invoice number is {invoice_number}<br />\n                    Total amount: {total_amount}<br />\n                    Paid amount: {received_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (11, 2, 'payment_received', '<p>Dear {contact_name},</p>\n\n                <p>We have received a payment of {received_amount}</p>\n\n                <p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (12, 2, 'payment_reminder', '<p>Dear {contact_name},</p>\n\n                    <p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
@@ -1912,25 +1895,16 @@ INSERT INTO `notification_templates` (`id`, `business_id`, `template_for`, `emai
 (44, 5, 'items_pending', '<p>Dear {contact_name},<br />This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\r\n<p>{business_name}<br />{business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2022-05-29 22:18:43', '2022-06-01 12:57:07'),
 (45, 5, 'new_quotation', '<p>Dear {contact_name},</p>\r\n<p>Your quotation number is {invoice_number}<br />Total amount: {total_amount}</p>\r\n<p>Thank you for shopping with us.</p>\r\n<p>{business_logo}</p>\r\n<p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-05-29 22:18:43', '2022-06-01 12:57:07'),
 (46, 5, 'send_ledger', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, '2022-06-01 12:57:07', '2022-06-01 12:57:07'),
-(47, 1, 'send_ledger', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, '2022-09-05 06:14:25', '2022-09-05 06:14:25'),
-(48, 6, 'new_sale', '<p>Dear {contact_name},</p>\n\n                    <p>Your invoice number is {invoice_number}<br />\n                    Total amount: {total_amount}<br />\n                    Paid amount: {received_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(49, 6, 'payment_received', '<p>Dear {contact_name},</p>\n\n                <p>We have received a payment of {received_amount}</p>\n\n                <p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(50, 6, 'payment_reminder', '<p>Dear {contact_name},</p>\n\n                    <p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(51, 6, 'new_booking', '<p>Dear {contact_name},</p>\n\n                    <p>Your booking is confirmed</p>\n\n                    <p>Date: {start_time} to {end_time}</p>\n\n                    <p>Table: {table}</p>\n\n                    <p>Location: {location}</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, Your booking is confirmed. Date: {start_time} to {end_time}, Table: {table}, Location: {location}', NULL, 'Booking Confirmed - {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(52, 6, 'new_order', '<p>Dear {contact_name},</p>\n\n                    <p>We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'Dear {contact_name}, We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible. {business_name}', NULL, 'New Order, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(53, 6, 'payment_paid', '<p>Dear {contact_name},</p>\n\n                    <p>We have paid amount {paid_amount} again invoice number {order_ref_number}.<br />\n                    Kindly note it down.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have paid amount {paid_amount} again invoice number {order_ref_number}.\n                    Kindly note it down. {business_name}', NULL, 'Payment Paid, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(54, 6, 'items_received', '<p>Dear {contact_name},</p>\n\n                    <p>We have received all items from invoice reference number {order_ref_number}. Thank you for processing it.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have received all items from invoice reference number {order_ref_number}. Thank you for processing it. {business_name}', NULL, 'Items received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(55, 6, 'items_pending', '<p>Dear {contact_name},<br />\n                    This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(56, 6, 'new_quotation', '<p>Dear {contact_name},</p>\n\n                    <p>Your quotation number is {invoice_number}<br />\n                    Total amount: {total_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(57, 7, 'new_sale', '<p>Dear {contact_name},</p>\n\n                    <p>Your invoice number is {invoice_number}<br />\n                    Total amount: {total_amount}<br />\n                    Paid amount: {received_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(58, 7, 'payment_received', '<p>Dear {contact_name},</p>\n\n                <p>We have received a payment of {received_amount}</p>\n\n                <p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(59, 7, 'payment_reminder', '<p>Dear {contact_name},</p>\n\n                    <p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(60, 7, 'new_booking', '<p>Dear {contact_name},</p>\n\n                    <p>Your booking is confirmed</p>\n\n                    <p>Date: {start_time} to {end_time}</p>\n\n                    <p>Table: {table}</p>\n\n                    <p>Location: {location}</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, Your booking is confirmed. Date: {start_time} to {end_time}, Table: {table}, Location: {location}', NULL, 'Booking Confirmed - {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(61, 7, 'new_order', '<p>Dear {contact_name},</p>\n\n                    <p>We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'Dear {contact_name}, We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible. {business_name}', NULL, 'New Order, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(62, 7, 'payment_paid', '<p>Dear {contact_name},</p>\n\n                    <p>We have paid amount {paid_amount} again invoice number {order_ref_number}.<br />\n                    Kindly note it down.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have paid amount {paid_amount} again invoice number {order_ref_number}.\n                    Kindly note it down. {business_name}', NULL, 'Payment Paid, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(63, 7, 'items_received', '<p>Dear {contact_name},</p>\n\n                    <p>We have received all items from invoice reference number {order_ref_number}. Thank you for processing it.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have received all items from invoice reference number {order_ref_number}. Thank you for processing it. {business_name}', NULL, 'Items received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(64, 7, 'items_pending', '<p>Dear {contact_name},<br />\n                    This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(65, 7, 'new_quotation', '<p>Dear {contact_name},</p>\n\n                    <p>Your quotation number is {invoice_number}<br />\n                    Total amount: {total_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(47, 6, 'new_sale', '<p>Dear {contact_name},</p>\n\n                    <p>Your invoice number is {invoice_number}<br />\n                    Total amount: {total_amount}<br />\n                    Paid amount: {received_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(48, 6, 'payment_received', '<p>Dear {contact_name},</p>\n\n                <p>We have received a payment of {received_amount}</p>\n\n                <p>{business_logo}</p>', 'Dear {contact_name}, We have received a payment of {received_amount}. {business_name}', NULL, 'Payment Received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(49, 6, 'payment_reminder', '<p>Dear {contact_name},</p>\n\n                    <p>This is to remind you that you have pending payment of {due_amount}. Kindly pay it as soon as possible.</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, You have pending payment of {due_amount}. Kindly pay it as soon as possible. {business_name}', NULL, 'Payment Reminder, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(50, 6, 'new_booking', '<p>Dear {contact_name},</p>\n\n                    <p>Your booking is confirmed</p>\n\n                    <p>Date: {start_time} to {end_time}</p>\n\n                    <p>Table: {table}</p>\n\n                    <p>Location: {location}</p>\n\n                    <p>{business_logo}</p>', 'Dear {contact_name}, Your booking is confirmed. Date: {start_time} to {end_time}, Table: {table}, Location: {location}', NULL, 'Booking Confirmed - {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(51, 6, 'new_order', '<p>Dear {contact_name},</p>\n\n                    <p>We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'Dear {contact_name}, We have a new order with reference number {order_ref_number}. Kindly process the products as soon as possible. {business_name}', NULL, 'New Order, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(52, 6, 'payment_paid', '<p>Dear {contact_name},</p>\n\n                    <p>We have paid amount {paid_amount} again invoice number {order_ref_number}.<br />\n                    Kindly note it down.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have paid amount {paid_amount} again invoice number {order_ref_number}.\n                    Kindly note it down. {business_name}', NULL, 'Payment Paid, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(53, 6, 'items_received', '<p>Dear {contact_name},</p>\n\n                    <p>We have received all items from invoice reference number {order_ref_number}. Thank you for processing it.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'We have received all items from invoice reference number {order_ref_number}. Thank you for processing it. {business_name}', NULL, 'Items received, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(54, 6, 'items_pending', '<p>Dear {contact_name},<br />\n                    This is to remind you that we have not yet received some items from invoice reference number {order_ref_number}. Please process it as soon as possible.</p>\n\n                    <p>{business_name}<br />\n                    {business_logo}</p>', 'This is to remind you that we have not yet received some items from invoice reference number {order_ref_number} . Please process it as soon as possible.{business_name}', NULL, 'Items Pending, from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(55, 6, 'new_quotation', '<p>Dear {contact_name},</p>\n\n                    <p>Your quotation number is {invoice_number}<br />\n                    Total amount: {total_amount}</p>\n\n                    <p>Thank you for shopping with us.</p>\n\n                    <p>{business_logo}</p>\n\n                    <p>&nbsp;</p>', 'Dear {contact_name}, Thank you for shopping with us. {business_name}', NULL, 'Thank you from {business_name}', NULL, NULL, 0, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(56, 1, 'send_ledger', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, '2022-09-12 15:07:22', '2022-09-12 15:07:22');
 
 -- --------------------------------------------------------
 
@@ -2054,8 +2028,7 @@ INSERT INTO `packages` (`id`, `name`, `description`, `location_count`, `user_cou
 (1, 'Ep', 'G', 9999, 18, 99999, 0, 0, 0, 0, 1000, 'years', 99999, 5, '0.0000', '', 1, 1, 1, 0, 0, 0, '', '', '2022-05-29 22:25:41', '2021-05-01 00:40:04', '2022-05-29 22:25:41'),
 (2, 'Aanin Mahmodul', 'Aanin Mahmodul', 100000, 1000000000, 1000000000, 0, 0, 0, 0, 1000000000, 'years', 121, 50, '1000.0000', '{\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 2, 1, 1, 1, 0, '', '', '2022-05-29 22:25:49', '2021-05-01 16:42:53', '2022-05-29 22:25:49'),
 (3, 'e shop', 'e shop', 10, 20, 2147483647, 0, 0, 0, 0, 2147483647, 'months', 100000, 60, '299.0000', '{\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\"}', 1, 1, 1, 0, 0, 0, '', '', '2022-05-29 22:25:46', '2022-05-29 22:16:44', '2022-05-29 22:25:46'),
-(4, 'electronics Shop', 'electronics Shop', 1, 20, 1000, 0, 0, 0, 0, 10000, 'months', 1, 60, '299.0000', '{\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 1, 1, 0, 0, 1, NULL, NULL, NULL, '2022-05-29 22:29:08', '2022-09-05 09:08:51'),
-(5, 'Young One', 'Young One', 2, 10, 1000, 0, 0, 0, 0, 10000, 'months', 1, 30, '300.0000', '{\"manufacturing_module\":\"1\"}', 1, 1, 1, 0, 0, 0, '', '', NULL, '2022-09-05 12:07:44', '2022-09-05 12:08:10');
+(4, 'electronics Shop', 'electronics Shop', 1, 20, 1000, 0, 0, 0, 0, 10000, 'months', 1, 60, '299.0000', '{\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 1, 1, 0, 0, 1, NULL, NULL, NULL, '2022-05-29 22:29:08', '2022-05-29 22:29:08');
 
 -- --------------------------------------------------------
 
@@ -2188,8 +2161,8 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (98, 'location.3', 'web', '2021-10-20 15:55:56', '2021-10-20 15:55:56'),
 (99, 'location.4', 'web', '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (100, 'location.5', 'web', '2022-05-29 22:18:44', '2022-05-29 22:18:44'),
-(101, 'location.6', 'web', '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(102, 'location.7', 'web', '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(101, 'location.6', 'web', '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(102, 'selling_price_group.1', 'web', '2022-09-12 13:12:52', '2022-09-12 13:12:52');
 
 -- --------------------------------------------------------
 
@@ -2201,7 +2174,6 @@ CREATE TABLE `printers` (
   `id` int(10) UNSIGNED NOT NULL,
   `business_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `model` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `connection_type` enum('network','windows','linux') COLLATE utf8mb4_unicode_ci NOT NULL,
   `capability_profile` enum('default','simple','SP2000','TEP-200M','P822D') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'default',
   `char_per_line` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -2212,13 +2184,6 @@ CREATE TABLE `printers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `printers`
---
-
-INSERT INTO `printers` (`id`, `business_id`, `name`, `model`, `connection_type`, `capability_profile`, `char_per_line`, `ip_address`, `port`, `path`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 1, 'EPSON LQ 310', 'Canon', 'windows', 'TEP-200M', '42', '', '', 'adsfads', 1, '2022-09-04 08:51:21', '2022-09-04 08:58:51');
 
 -- --------------------------------------------------------
 
@@ -2268,7 +2233,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `business_id`, `type`, `unit_id`, `sub_unit_ids`, `brand_id`, `category_id`, `sub_category_id`, `tax`, `tax_type`, `enable_stock`, `alert_quantity`, `sku`, `barcode_type`, `expiry_period`, `expiry_period_type`, `enable_sr_no`, `weight`, `product_custom_field1`, `product_custom_field2`, `product_custom_field3`, `product_custom_field4`, `image`, `woocommerce_media_id`, `product_description`, `created_by`, `woocommerce_product_id`, `woocommerce_disable_sync`, `warranty_id`, `is_inactive`, `not_for_selling`, `created_at`, `updated_at`) VALUES
-(2, 'EPSON LQ 310', 1, 'single', 1, NULL, 3, NULL, NULL, NULL, 'exclusive', 1, '10.0000', '0002', 'C128', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 0, NULL, 0, 0, '2022-09-05 07:55:08', '2022-09-05 07:57:24');
+(1, 'LPE 05', 3, 'single', 3, NULL, NULL, 1, NULL, NULL, 'exclusive', 1, NULL, '50', 'C128', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, '1634918545_407.jpg', NULL, NULL, 3, NULL, 0, NULL, 0, 0, '2021-10-22 16:02:29', '2021-10-22 16:12:12'),
+(2, 'Lactogen 2 180gm', 1, 'single', 1, NULL, 3, 36, NULL, NULL, 'exclusive', 1, '5.0000', '0002', 'C128', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 0, NULL, 0, 0, '2022-09-12 13:09:50', '2022-09-12 14:59:45');
 
 -- --------------------------------------------------------
 
@@ -2328,7 +2294,8 @@ CREATE TABLE `product_variations` (
 --
 
 INSERT INTO `product_variations` (`id`, `variation_template_id`, `name`, `product_id`, `is_dummy`, `created_at`, `updated_at`) VALUES
-(2, NULL, 'DUMMY', 2, 1, '2022-09-05 07:55:08', '2022-09-05 07:55:08');
+(1, NULL, 'DUMMY', 1, 1, '2021-10-22 16:02:30', '2021-10-22 16:02:30'),
+(2, NULL, 'DUMMY', 2, 1, '2022-09-12 13:09:50', '2022-09-12 13:09:50');
 
 -- --------------------------------------------------------
 
@@ -2365,8 +2332,9 @@ CREATE TABLE `purchase_lines` (
 --
 
 INSERT INTO `purchase_lines` (`id`, `transaction_id`, `product_id`, `variation_id`, `quantity`, `pp_without_discount`, `discount_percent`, `purchase_price`, `purchase_price_inc_tax`, `item_tax`, `tax_id`, `quantity_sold`, `quantity_adjusted`, `quantity_returned`, `mfg_quantity_used`, `mfg_date`, `exp_date`, `lot_number`, `sub_unit_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 2, 2, '10.0000', '15000.0000', '0.00', '15000.0000', '15000.0000', '0.0000', NULL, '2.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, '2022-09-05 08:02:29', '2022-09-05 09:54:44'),
-(2, 5, 2, 2, '1.0000', '15000.0000', '0.00', '15000.0000', '15000.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, '2022-09-05 09:51:45', '2022-09-05 09:52:35');
+(1, 2, 2, 2, '1.0000', '245.0000', '0.00', '245.0000', '245.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, '2022-09-12 14:47:06', '2022-09-12 14:53:11'),
+(2, 7, 2, 2, '10.0000', '245.0000', '0.00', '245.0000', '245.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, '10', NULL, '2022-09-12 14:59:01', '2022-09-12 15:01:09'),
+(3, 7, 2, 2, '100.0000', '245.0000', '0.00', '245.0000', '245.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, '2022-09-12 14:59:57', '2022-09-12 14:59:57');
 
 -- --------------------------------------------------------
 
@@ -2388,11 +2356,11 @@ CREATE TABLE `reference_counts` (
 --
 
 INSERT INTO `reference_counts` (`id`, `ref_type`, `ref_count`, `business_id`, `created_at`, `updated_at`) VALUES
-(1, 'contacts', 3, 1, '2021-04-22 23:34:37', '2022-09-04 10:11:10'),
+(1, 'contacts', 5, 1, '2021-04-22 23:34:37', '2022-09-12 14:46:56'),
 (2, 'business_location', 1, 1, '2021-04-22 23:34:37', '2021-04-22 23:34:37'),
 (3, 'contacts', 1, 2, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (4, 'business_location', 1, 2, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
-(5, 'expense', 2, 1, '2021-07-01 23:52:09', '2022-09-05 09:27:05'),
+(5, 'expense', 2, 1, '2021-07-01 23:52:09', '2022-09-12 15:01:34'),
 (6, 'expense_payment', 1, 1, '2021-07-01 23:52:37', '2021-07-01 23:52:37'),
 (7, 'contacts', 2, 3, '2021-10-20 15:55:55', '2021-10-22 16:11:54'),
 (8, 'business_location', 1, 3, '2021-10-20 15:55:56', '2021-10-20 15:55:56'),
@@ -2400,15 +2368,15 @@ INSERT INTO `reference_counts` (`id`, `ref_type`, `ref_count`, `business_id`, `c
 (10, 'business_location', 1, 4, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (11, 'contacts', 2, 5, '2022-05-29 22:18:43', '2022-06-02 14:47:36'),
 (12, 'business_location', 1, 5, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(13, 'stock_adjustment', 1, 1, '2022-09-05 06:08:02', '2022-09-05 06:08:02'),
-(14, 'subscription', 1, 1, '2022-09-05 08:06:33', '2022-09-05 08:06:33'),
-(15, 'purchase', 1, 1, '2022-09-05 09:51:45', '2022-09-05 09:51:45'),
-(16, 'purchase_payment', 1, 1, '2022-09-05 09:53:25', '2022-09-05 09:53:25'),
-(17, 'sell_payment', 1, 1, '2022-09-05 09:54:44', '2022-09-05 09:54:44'),
-(18, 'contacts', 1, 6, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(19, 'business_location', 1, 6, '2022-09-05 10:57:29', '2022-09-05 10:57:29'),
-(20, 'contacts', 1, 7, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(21, 'business_location', 1, 7, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(13, 'username', 1, 1, '2022-09-12 12:52:44', '2022-09-12 12:52:44'),
+(14, 'contacts', 1, 6, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(15, 'business_location', 1, 6, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(16, 'purchase_payment', 3, 1, '2022-09-12 13:05:18', '2022-09-12 14:52:04'),
+(17, 'sell_payment', 2, 1, '2022-09-12 13:06:33', '2022-09-12 14:52:43'),
+(18, 'purchase', 1, 1, '2022-09-12 14:47:06', '2022-09-12 14:47:06'),
+(19, 'purchase_return', 1, 1, '2022-09-12 14:50:04', '2022-09-12 14:50:04'),
+(20, 'draft', 2, 1, '2022-09-12 14:54:58', '2022-09-12 14:56:09'),
+(21, 'stock_adjustment', 1, 1, '2022-09-12 15:00:42', '2022-09-12 15:00:42');
 
 -- --------------------------------------------------------
 
@@ -2471,9 +2439,8 @@ INSERT INTO `roles` (`id`, `name`, `guard_name`, `business_id`, `is_default`, `i
 (8, 'Cashier#4', 'web', 4, 0, 0, '2022-01-26 13:49:43', '2022-01-26 13:49:43'),
 (9, 'Admin#5', 'web', 5, 1, 0, '2022-05-29 22:18:42', '2022-05-29 22:18:42'),
 (10, 'Cashier#5', 'web', 5, 0, 0, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(12, 'Worker#1', 'web', 1, 0, 0, '2022-09-05 10:34:10', '2022-09-05 10:44:56'),
-(15, 'Admin#7', 'web', 7, 1, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57'),
-(16, 'Cashier#7', 'web', 7, 0, 0, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(11, 'Admin#6', 'web', 6, 1, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(12, 'Cashier#6', 'web', 6, 0, 0, '2022-09-12 12:57:16', '2022-09-12 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -2491,49 +2458,47 @@ CREATE TABLE `role_has_permissions` (
 --
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
-(6, 12),
 (25, 2),
 (25, 4),
 (25, 6),
 (25, 8),
 (25, 10),
-(25, 16),
+(25, 12),
 (26, 2),
 (26, 4),
 (26, 6),
 (26, 8),
 (26, 10),
-(26, 16),
+(26, 12),
 (48, 2),
 (48, 4),
 (48, 6),
 (48, 8),
 (48, 10),
-(48, 16),
+(48, 12),
 (49, 2),
 (49, 4),
 (49, 6),
 (49, 8),
 (49, 10),
-(49, 16),
+(49, 12),
 (50, 2),
 (50, 4),
 (50, 6),
 (50, 8),
 (50, 10),
-(50, 16),
+(50, 12),
 (51, 2),
 (51, 4),
 (51, 6),
 (51, 8),
 (51, 10),
-(51, 16),
+(51, 12),
 (80, 4),
 (80, 6),
 (80, 8),
 (80, 10),
-(80, 16),
-(81, 12);
+(80, 12);
 
 -- --------------------------------------------------------
 
@@ -2551,6 +2516,13 @@ CREATE TABLE `selling_price_groups` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `selling_price_groups`
+--
+
+INSERT INTO `selling_price_groups` (`id`, `name`, `description`, `business_id`, `is_active`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'Md Anwar Hossain', 'fg', 1, 1, '2022-09-12 13:12:59', '2022-09-12 13:12:52', '2022-09-12 13:12:59');
 
 -- --------------------------------------------------------
 
@@ -2639,12 +2611,11 @@ INSERT INTO `subscriptions` (`id`, `business_id`, `package_id`, `start_date`, `t
 (1, 1, 2, '2021-05-01', '2142-06-20', '2142-05-01', '1000.0000', '{\"location_count\":100000,\"user_count\":1000000000,\"product_count\":1000000000,\"invoice_count\":1000000000,\"name\":\"Aanin Mahmodul\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', NULL, 'approved', NULL, '2021-05-01 16:43:04', '2021-05-01 16:43:04'),
 (2, 2, 2, '2021-05-05', '2142-06-24', '2142-05-05', '1000.0000', '{\"location_count\":100000,\"user_count\":1000000000,\"product_count\":1000000000,\"invoice_count\":1000000000,\"name\":\"Aanin Mahmodul\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', '55', 'approved', NULL, '2021-05-05 09:12:26', '2021-05-05 09:12:26'),
 (3, 3, 2, '2021-10-20', '2142-12-09', '2142-10-20', '1000.0000', '{\"location_count\":100000,\"user_count\":1000000000,\"product_count\":1000000000,\"invoice_count\":1000000000,\"name\":\"Aanin Mahmodul\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', NULL, 'approved', NULL, '2021-10-20 15:58:39', '2021-10-20 15:58:39'),
-(4, 4, 2, '2022-01-26', '2143-03-17', '2143-01-26', '1000.0000', '{\"location_count\":100000,\"user_count\":1000000000,\"product_count\":1000000000,\"invoice_count\":1000000000,\"name\":\"Aanin Mahmodul\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', '111', 'approved', NULL, '2022-01-26 13:50:05', '2022-09-04 06:39:36'),
-(5, 5, 3, '2022-08-29', '2022-09-23', '2022-09-06', '299.0000', '{\"location_count\":10,\"user_count\":20,\"product_count\":2147483647,\"invoice_count\":2147483647,\"name\":\"e shop\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\"}', 5, 'offline', '11', 'approved', NULL, '2022-05-29 22:20:29', '2022-09-05 09:06:55'),
-(6, 5, 3, '2022-09-09', '2022-09-15', '2022-09-02', '299.0000', '{\"location_count\":10,\"user_count\":20,\"product_count\":2147483647,\"invoice_count\":2147483647,\"name\":\"e shop\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\"}', 5, 'offline', NULL, 'approved', NULL, '2022-05-29 22:20:51', '2022-09-05 09:07:09'),
+(4, 4, 2, '2022-01-26', '2143-03-17', '2143-01-26', '1000.0000', '{\"location_count\":100000,\"user_count\":1000000000,\"product_count\":1000000000,\"invoice_count\":1000000000,\"name\":\"Aanin Mahmodul\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', '111', 'approved', NULL, '2022-01-26 13:50:05', '2022-01-26 13:50:05'),
+(5, 5, 3, NULL, NULL, NULL, '299.0000', '{\"location_count\":10,\"user_count\":20,\"product_count\":2147483647,\"invoice_count\":2147483647,\"name\":\"e shop\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\"}', 5, 'offline', NULL, 'waiting', NULL, '2022-05-29 22:20:29', '2022-05-29 22:20:29'),
+(6, 5, 3, NULL, NULL, NULL, '299.0000', '{\"location_count\":10,\"user_count\":20,\"product_count\":2147483647,\"invoice_count\":2147483647,\"name\":\"e shop\",\"essentials_module\":\"1\",\"manufacturing_module\":\"1\",\"productcatalogue_module\":\"1\"}', 5, 'offline', NULL, 'waiting', NULL, '2022-05-29 22:20:51', '2022-05-29 22:20:51'),
 (7, 5, 4, '2022-05-30', '2022-08-29', '2022-06-30', '299.0000', '{\"location_count\":1,\"user_count\":20,\"product_count\":1000,\"invoice_count\":10000,\"name\":\"electronics Shop\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', '66666', 'approved', NULL, '2022-05-29 22:29:55', '2022-05-29 22:29:55'),
-(8, 4, 4, '2143-01-27', '2143-04-28', '2143-02-27', '299.0000', '{\"location_count\":1,\"user_count\":20,\"product_count\":1000,\"invoice_count\":10000,\"name\":\"electronics Shop\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', NULL, 'approved', NULL, '2022-09-04 06:41:42', '2022-09-04 06:41:42'),
-(10, 7, 4, '2022-09-05', '2022-12-04', '2022-10-05', '299.0000', '{\"location_count\":1,\"user_count\":20,\"product_count\":1000,\"invoice_count\":10000,\"name\":\"electronics Shop\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', '1224LJJJMK', 'approved', NULL, '2022-09-05 12:02:20', '2022-09-05 12:02:20');
+(8, 6, 4, '2022-09-12', '2022-12-11', '2022-10-12', '299.0000', '{\"location_count\":1,\"user_count\":20,\"product_count\":1000,\"invoice_count\":10000,\"name\":\"electronics Shop\",\"productcatalogue_module\":\"1\",\"woocommerce_module\":\"1\"}', 1, 'offline', NULL, 'approved', NULL, '2022-09-12 12:59:58', '2022-09-12 12:59:58');
 
 -- --------------------------------------------------------
 
@@ -2852,11 +2823,8 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `business_id`, `location_id`, `res_table_id`, `res_waiter_id`, `res_order_status`, `type`, `sub_type`, `status`, `sub_status`, `is_quotation`, `payment_status`, `adjustment_type`, `contact_id`, `customer_group_id`, `invoice_no`, `ref_no`, `subscription_no`, `subscription_repeat_on`, `transaction_date`, `total_before_tax`, `tax_id`, `tax_amount`, `discount_type`, `discount_amount`, `rp_redeemed`, `rp_redeemed_amount`, `shipping_details`, `shipping_address`, `shipping_status`, `delivered_to`, `shipping_charges`, `shipping_custom_field_1`, `shipping_custom_field_2`, `shipping_custom_field_3`, `shipping_custom_field_4`, `shipping_custom_field_5`, `additional_notes`, `staff_note`, `round_off_amount`, `final_total`, `expense_category_id`, `expense_for`, `commission_agent`, `document`, `is_direct_sale`, `is_suspend`, `exchange_rate`, `total_amount_recovered`, `transfer_parent_id`, `return_parent_id`, `opening_stock_product_id`, `created_by`, `mfg_parent_production_purchase_id`, `mfg_wasted_units`, `mfg_production_cost`, `mfg_production_cost_type`, `mfg_is_final`, `essentials_duration`, `essentials_duration_unit`, `essentials_amount_per_unit_duration`, `essentials_allowances`, `essentials_deductions`, `woocommerce_order_id`, `custom_field_1`, `custom_field_2`, `custom_field_3`, `custom_field_4`, `import_batch`, `import_time`, `types_of_service_id`, `packing_charge`, `packing_charge_type`, `service_custom_field_1`, `service_custom_field_2`, `service_custom_field_3`, `service_custom_field_4`, `is_created_from_api`, `rp_earned`, `order_addresses`, `is_recurring`, `recur_interval`, `recur_interval_type`, `recur_repetitions`, `recur_stopped_on`, `recur_parent_id`, `invoice_token`, `pay_term_number`, `pay_term_type`, `selling_price_group_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, NULL, NULL, NULL, 'expense', NULL, 'final', NULL, 0, 'paid', NULL, 1, NULL, NULL, 'EP2021/0001', NULL, NULL, '2021-07-02 05:51:00', '900.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '900.0000', NULL, NULL, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-01 23:52:09', '2021-07-01 23:52:37'),
-(2, 1, 1, NULL, NULL, NULL, 'opening_stock', NULL, 'received', NULL, 0, 'paid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-01 14:02:29', '150000.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '150000.0000', NULL, NULL, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, 2, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 08:02:29', '2022-09-05 08:02:29'),
-(3, 1, 1, NULL, NULL, NULL, 'sell', NULL, 'final', NULL, 0, 'paid', NULL, 1, NULL, '0001', '', '2022/0001', NULL, '2022-09-05 14:05:00', '0.0000', NULL, '0.0000', 'percentage', '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, 1, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 1, 1.0000, 'days', 0, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 08:06:33', '2022-09-05 08:06:33'),
-(4, 1, 1, NULL, NULL, NULL, 'expense', NULL, 'final', NULL, 0, 'due', NULL, 1, NULL, NULL, 'EP2022/0002', NULL, NULL, '2022-09-05 15:26:00', '100.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '100.0000', NULL, 1, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 09:27:05', '2022-09-05 09:27:05'),
-(5, 1, 1, NULL, NULL, NULL, 'purchase', NULL, 'received', NULL, 0, 'paid', NULL, 9, NULL, NULL, 'PO2022/0001', NULL, NULL, '2022-09-05 15:50:00', '15000.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '15000.0000', NULL, NULL, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 09:51:45', '2022-09-05 09:53:25'),
-(6, 1, 1, NULL, NULL, NULL, 'sell', NULL, 'final', NULL, 0, 'paid', NULL, 1, NULL, '0002', '', NULL, NULL, '2022-09-05 15:54:00', '15000.0000', NULL, '0.0000', 'percentage', '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '15000.0000', NULL, NULL, NULL, NULL, 1, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 1.0000, 'days', 0, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 09:54:44', '2022-09-05 09:54:44');
+(2, 1, 1, NULL, NULL, NULL, 'purchase', NULL, 'received', NULL, 0, 'paid', NULL, 12, NULL, NULL, 'PO2022/0001', NULL, NULL, '2022-09-12 20:46:00', '245.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '245.0000', NULL, NULL, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, NULL, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 14:47:06', '2022-09-12 14:52:04'),
+(7, 1, 1, NULL, NULL, NULL, 'opening_stock', NULL, 'received', NULL, 0, 'paid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-01 20:59:01', '26950.0000', NULL, '0.0000', NULL, '0.0000', 0, '0.0000', NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '26950.0000', NULL, NULL, NULL, NULL, 0, 0, '1.000', NULL, NULL, NULL, 2, 1, NULL, NULL, '0.0000', 'percentage', 0, '0.00', NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 14:59:01', '2022-09-12 14:59:57');
 
 -- --------------------------------------------------------
 
@@ -2900,8 +2868,10 @@ CREATE TABLE `transaction_payments` (
 
 INSERT INTO `transaction_payments` (`id`, `transaction_id`, `business_id`, `is_return`, `amount`, `method`, `transaction_no`, `card_transaction_number`, `card_number`, `card_type`, `card_holder_name`, `card_month`, `card_year`, `card_security`, `cheque_number`, `bank_account_number`, `paid_on`, `created_by`, `is_advance`, `payment_for`, `parent_id`, `note`, `document`, `payment_ref_no`, `account_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 0, '900.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-02 05:52:00', 1, 0, 1, NULL, NULL, NULL, '2021/0001', NULL, '2021-07-01 23:52:37', '2021-07-01 23:52:37'),
-(2, 5, 1, 0, '15000.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 15:53:00', 1, 0, 9, NULL, NULL, NULL, 'PP2022/0001', NULL, '2022-09-05 09:53:25', '2022-09-05 09:53:25'),
-(3, 6, 1, 0, '15000.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 15:54:00', 1, 0, 1, NULL, NULL, NULL, 'SP2022/0001', NULL, '2022-09-05 09:54:44', '2022-09-05 09:54:44');
+(2, NULL, 1, 0, '0.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 19:05:00', 1, 1, 10, NULL, NULL, NULL, 'PP2022/0001', NULL, '2022-09-12 13:05:18', '2022-09-12 13:05:18'),
+(3, NULL, 1, 0, '0.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 19:06:00', 1, 1, 11, NULL, NULL, NULL, 'SP2022/0001', NULL, '2022-09-12 13:06:33', '2022-09-12 13:06:33'),
+(4, 2, 1, 0, '1.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 20:48:00', 1, 0, 12, NULL, NULL, NULL, 'PP2022/0002', NULL, '2022-09-12 14:48:23', '2022-09-12 14:48:23'),
+(5, 2, 1, 0, '244.0000', 'cash', NULL, NULL, NULL, 'credit', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 20:51:00', 1, 0, 12, NULL, NULL, NULL, 'PP2022/0003', NULL, '2022-09-12 14:52:04', '2022-09-12 14:52:04');
 
 -- --------------------------------------------------------
 
@@ -2937,14 +2907,6 @@ CREATE TABLE `transaction_sell_lines` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `transaction_sell_lines`
---
-
-INSERT INTO `transaction_sell_lines` (`id`, `transaction_id`, `product_id`, `variation_id`, `quantity`, `mfg_waste_percent`, `quantity_returned`, `unit_price_before_discount`, `unit_price`, `line_discount_type`, `line_discount_amount`, `unit_price_inc_tax`, `item_tax`, `tax_id`, `discount_id`, `lot_no_line_id`, `sell_line_note`, `woocommerce_line_items_id`, `res_service_staff_id`, `res_line_order_status`, `parent_sell_line_id`, `children_type`, `sub_unit_id`, `created_at`, `updated_at`) VALUES
-(1, 3, 2, 2, '1.0000', '0.0000', '0.0000', '0.0000', '0.0000', 'fixed', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '', NULL, '2022-09-05 08:06:33', '2022-09-05 08:06:33'),
-(2, 6, 2, 2, '1.0000', '0.0000', '0.0000', '15000.0000', '15000.0000', 'fixed', '0.0000', '15000.0000', '0.0000', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '', NULL, '2022-09-05 09:54:44', '2022-09-05 09:54:44');
-
 -- --------------------------------------------------------
 
 --
@@ -2961,14 +2923,6 @@ CREATE TABLE `transaction_sell_lines_purchase_lines` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `transaction_sell_lines_purchase_lines`
---
-
-INSERT INTO `transaction_sell_lines_purchase_lines` (`id`, `sell_line_id`, `stock_adjustment_line_id`, `purchase_line_id`, `quantity`, `qty_returned`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, 1, '1.0000', '0.0000', '2022-09-05 08:06:33', '2022-09-05 08:06:33'),
-(2, 2, NULL, 1, '1.0000', '0.0000', '2022-09-05 09:54:44', '2022-09-05 09:54:44');
 
 -- --------------------------------------------------------
 
@@ -3014,12 +2968,13 @@ CREATE TABLE `units` (
 --
 
 INSERT INTO `units` (`id`, `business_id`, `actual_name`, `short_name`, `allow_decimal`, `base_unit_id`, `base_unit_multiplier`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Pieces', 'Pc(s)', 0, NULL, NULL, 1, NULL, '2021-04-22 23:34:37', '2022-09-05 08:01:38'),
+(1, 1, 'Pieces', 'Pc(s)', 0, NULL, NULL, 1, NULL, '2021-04-22 23:34:37', '2021-04-22 23:34:37'),
 (2, 2, 'Pieces', 'Pc(s)', 0, NULL, NULL, 2, NULL, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 3, 'Pieces', 'Pc(s)', 0, NULL, NULL, 3, NULL, '2021-10-20 15:55:56', '2021-10-20 15:55:56'),
 (4, 4, 'Pieces', 'Pc(s)', 0, NULL, NULL, 4, NULL, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
 (5, 5, 'Pieces', 'Pc(s)', 0, NULL, NULL, 5, NULL, '2022-05-29 22:18:43', '2022-05-29 22:18:43'),
-(7, 7, 'Pieces', 'Pc(s)', 0, NULL, NULL, 7, NULL, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(6, 6, 'Pieces', 'Pc(s)', 0, NULL, NULL, 7, NULL, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(7, 1, 'Cartoon', 'ctn', 1, 1, '24.0000', 1, '2022-09-12 13:13:54', '2022-09-12 13:13:32', '2022-09-12 13:13:54');
 
 -- --------------------------------------------------------
 
@@ -3080,12 +3035,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_type`, `surname`, `first_name`, `last_name`, `username`, `email`, `password`, `language`, `contact_no`, `address`, `remember_token`, `business_id`, `essentials_department_id`, `essentials_designation_id`, `max_sales_discount_percent`, `allow_login`, `status`, `is_cmmsn_agnt`, `cmmsn_percent`, `selected_contacts`, `dob`, `gender`, `marital_status`, `blood_group`, `contact_number`, `alt_number`, `family_number`, `fb_link`, `twitter_link`, `social_media_1`, `social_media_2`, `permanent_address`, `current_address`, `guardian_name`, `custom_field_1`, `custom_field_2`, `custom_field_3`, `custom_field_4`, `bank_details`, `id_proof_name`, `id_proof_number`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'user', 'MD', 'Aanin', 'Mahmodul', 'anin', 'anin.bd@gmail.com', '$2y$10$PaDepI0On1TSKoENg3yiWOdCv8wijgrpT/P745KepbEnR8XFzzA5S', 'en', NULL, NULL, 'gu7MrLebUOykAGd8OkLrDJCD0ZE0baClaRuxMIMda7wgyFnHCSznQjwZ1DRC', 1, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, NULL, '2021-04-22 23:34:37', '2022-09-03 08:37:06'),
+(1, 'user', 'MD', 'Aanin', 'Mahmodul', 'anin', 'anin.bd@gmail.com', '$2y$10$PaDepI0On1TSKoENg3yiWOdCv8wijgrpT/P745KepbEnR8XFzzA5S', 'en', NULL, NULL, 'AJZxle8KvCVsguLM47tdQf94J00PAWdyFZDvkECpz1BhzeCYHhFeBwo2pNAG', 1, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, NULL, '2021-04-22 23:34:37', '2022-09-03 08:37:06'),
 (2, 'user', 'Mr', 'Moshiur', NULL, 'Moshiur', 'moshiur.sujan@live.com', '9058e374a4ab7705d2283b33bf0f23ae', 'en', NULL, NULL, NULL, 2, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 'user', 'MD', 'Abdus Salam', 'Fotik', 'fotik', 'info.fotik@gmail.com', '$2y$10$zMsnRyQ61XBXFl29SDSofuNwnegVAETzMOw0ANbiTawtEQi0onMoC', 'en', NULL, NULL, 'te2GumRi3a0M8wY2dtMk1UabNUdFHrfOLQQLuCFy276CpiOuO4cbZ3LWzRD0', 3, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 'user', 'Md', 'Rupom', NULL, 'Rupom', NULL, '$2y$10$JNUbv37C.VoEwLSM84KxFuS9aPZCdMpH/RduedPHwdDL/65jvZ0R6', 'en', NULL, NULL, NULL, 4, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:43', '2022-01-26 13:49:43'),
 (5, 'user', NULL, 'Khandakar Rohol', 'Amin', 'keshop', 'khandakerindustries@gmail.com', '$2y$10$aKexzGTwgDniOQH98w6M7.8KsUYkWRocIvGOyThHQpkLGniuLFm8u', 'en', NULL, NULL, 'g6oBCDC0ffEtdybumethBsGJuEeRHbRwRiABpYOvLNqu0ZuDpwsWEquHdP6G', 5, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, 'male', 'married', 'A+', '01713007727', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, NULL, '2022-05-29 22:18:42', '2022-06-01 15:26:01'),
-(7, 'user', NULL, 'Worker', NULL, 'worker', NULL, '$2y$10$yl6B4Mxsnn5K4vCUQEGKYugwYujDsniOAmAxDmVfuQokyWZ4I5H2C', 'en', NULL, NULL, NULL, 7, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-05 11:50:57', '2022-09-05 11:50:57');
+(6, 'user', 'Md', 'Anwar', 'Hossain', 'anwar-01', 'anwar@gmail.com', '$2y$10$lJ.CU5ts9myb6b3Tb0.N/eR65djPeVFFqT8Tz.9hGU.DrXZ9bH0Ty', 'en', NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, '2022-09-12 12:53:50', '2022-09-12 12:52:44', '2022-09-12 12:53:50'),
+(7, 'user', 'Hossain', 'Anwar', NULL, 'anwar', 'anwar@gmail.com', '$2y$10$cPn/cfRzpQLCEc/EPDrxCOoO84a2FcVwnlncBkHYOrsTM6y9N/XWO', 'bn', NULL, NULL, NULL, 6, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 12:57:16', '2022-09-12 12:57:16'),
+(8, 'user', NULL, 'Anwar', 'Hossain', NULL, 'anwar@gmail.com', NULL, 'en', NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, 'active', 1, '3.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 13:04:48', '2022-09-12 13:04:31', '2022-09-12 13:04:48');
 
 -- --------------------------------------------------------
 
@@ -3129,7 +3086,8 @@ CREATE TABLE `variations` (
 --
 
 INSERT INTO `variations` (`id`, `name`, `product_id`, `sub_sku`, `product_variation_id`, `woocommerce_variation_id`, `variation_value_id`, `default_purchase_price`, `dpp_inc_tax`, `profit_percent`, `default_sell_price`, `sell_price_inc_tax`, `created_at`, `updated_at`, `deleted_at`, `combo_variations`) VALUES
-(2, 'DUMMY', 2, '0002', 2, NULL, NULL, '15000.0000', '15000.0000', '-100.0000', '0.0000', '0.0000', '2022-09-05 07:55:08', '2022-09-05 09:51:45', NULL, '[]');
+(1, 'DUMMY', 1, '50', 1, NULL, NULL, '0.0000', '0.0000', '0.0000', '200.0000', '200.0000', '2021-10-22 16:02:30', '2021-10-22 16:12:12', NULL, '[]'),
+(2, 'DUMMY', 2, '0002', 2, NULL, NULL, '245.0000', '245.0000', '0.0000', '245.0000', '245.0000', '2022-09-12 13:09:50', '2022-09-12 14:59:45', NULL, '[]');
 
 -- --------------------------------------------------------
 
@@ -3168,7 +3126,7 @@ CREATE TABLE `variation_location_details` (
 --
 
 INSERT INTO `variation_location_details` (`id`, `product_id`, `product_variation_id`, `variation_id`, `location_id`, `qty_available`, `created_at`, `updated_at`) VALUES
-(1, 2, 2, 2, 1, '9.0000', '2022-09-05 08:02:29', '2022-09-05 09:54:44');
+(1, 2, 2, 2, 1, '111.0000', '2022-09-12 14:47:06', '2022-09-12 15:01:09');
 
 -- --------------------------------------------------------
 
@@ -3185,6 +3143,13 @@ CREATE TABLE `variation_templates` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `variation_templates`
+--
+
+INSERT INTO `variation_templates` (`id`, `name`, `business_id`, `woocommerce_attr_id`, `created_at`, `updated_at`) VALUES
+(2, 'ABC', 1, NULL, '2022-09-12 14:35:52', '2022-09-12 14:35:52');
+
 -- --------------------------------------------------------
 
 --
@@ -3198,6 +3163,13 @@ CREATE TABLE `variation_value_templates` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `variation_value_templates`
+--
+
+INSERT INTO `variation_value_templates` (`id`, `name`, `variation_template_id`, `created_at`, `updated_at`) VALUES
+(2, 'ACD', 2, '2022-09-12 14:35:52', '2022-09-12 14:35:52');
 
 -- --------------------------------------------------------
 
@@ -3241,17 +3213,7 @@ CREATE TABLE `woocommerce_sync_logs` (
 INSERT INTO `woocommerce_sync_logs` (`id`, `business_id`, `sync_type`, `operation_type`, `data`, `details`, `created_by`, `created_at`, `updated_at`) VALUES
 (1, 1, 'categories', NULL, NULL, NULL, 1, '2021-10-15 10:24:23', '2021-10-15 10:24:23'),
 (2, 1, 'categories', NULL, NULL, NULL, 1, '2021-10-15 10:24:53', '2021-10-15 10:24:53'),
-(3, 1, 'categories', NULL, NULL, NULL, 1, '2021-10-20 16:14:36', '2021-10-20 16:14:36'),
-(6, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:06', '2022-09-05 06:27:06'),
-(7, 1, 'new_products', NULL, NULL, NULL, 1, '2022-09-05 06:27:06', '2022-09-05 06:27:06'),
-(8, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:10', '2022-09-05 06:27:10'),
-(9, 1, 'all_products', NULL, NULL, NULL, 1, '2022-09-05 06:27:10', '2022-09-05 06:27:10'),
-(10, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:13', '2022-09-05 06:27:13'),
-(11, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:15', '2022-09-05 06:27:15'),
-(12, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:17', '2022-09-05 06:27:17'),
-(13, 1, 'categories', NULL, NULL, NULL, 1, '2022-09-05 06:27:17', '2022-09-05 06:27:17'),
-(14, 1, 'orders', NULL, NULL, NULL, 1, '2022-09-05 06:27:20', '2022-09-05 06:27:20'),
-(15, 1, 'orders', NULL, NULL, NULL, 1, '2022-09-05 06:27:49', '2022-09-05 06:27:49');
+(3, 1, 'categories', NULL, NULL, NULL, 1, '2021-10-20 16:14:36', '2021-10-20 16:14:36');
 
 --
 -- Indexes for dumped tables
@@ -3991,7 +3953,7 @@ ALTER TABLE `woocommerce_sync_logs`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `account_transactions`
@@ -4003,13 +3965,13 @@ ALTER TABLE `account_transactions`
 -- AUTO_INCREMENT for table `account_types`
 --
 ALTER TABLE `account_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `barcodes`
@@ -4021,49 +3983,49 @@ ALTER TABLE `barcodes`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `business`
 --
 ALTER TABLE `business`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `business_locations`
 --
 ALTER TABLE `business_locations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cash_registers`
 --
 ALTER TABLE `cash_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cash_register_transactions`
 --
 ALTER TABLE `cash_register_transactions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `currencies`
@@ -4075,7 +4037,7 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT for table `customer_groups`
 --
 ALTER TABLE `customer_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dashboard_configurations`
@@ -4153,7 +4115,7 @@ ALTER TABLE `essentials_reminders`
 -- AUTO_INCREMENT for table `essentials_shifts`
 --
 ALTER TABLE `essentials_shifts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `essentials_todo_comments`
@@ -4171,7 +4133,7 @@ ALTER TABLE `essentials_to_dos`
 -- AUTO_INCREMENT for table `essentials_user_shifts`
 --
 ALTER TABLE `essentials_user_shifts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `expense_categories`
@@ -4183,13 +4145,13 @@ ALTER TABLE `expense_categories`
 -- AUTO_INCREMENT for table `invoice_layouts`
 --
 ALTER TABLE `invoice_layouts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `invoice_schemes`
 --
 ALTER TABLE `invoice_schemes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `media`
@@ -4219,13 +4181,13 @@ ALTER TABLE `mfg_recipe_ingredients`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=318;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=317;
 
 --
 -- AUTO_INCREMENT for table `notification_templates`
 --
 ALTER TABLE `notification_templates`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -4243,7 +4205,7 @@ ALTER TABLE `oauth_personal_access_clients`
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -4255,7 +4217,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `printers`
 --
 ALTER TABLE `printers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -4279,7 +4241,7 @@ ALTER TABLE `product_variations`
 -- AUTO_INCREMENT for table `purchase_lines`
 --
 ALTER TABLE `purchase_lines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reference_counts`
@@ -4297,25 +4259,25 @@ ALTER TABLE `res_tables`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `selling_price_groups`
 --
 ALTER TABLE `selling_price_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `stock_adjustment_lines`
 --
 ALTER TABLE `stock_adjustment_lines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `superadmin_communicator_logs`
@@ -4345,19 +4307,19 @@ ALTER TABLE `tax_rates`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `transaction_payments`
 --
 ALTER TABLE `transaction_payments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaction_sell_lines`
 --
 ALTER TABLE `transaction_sell_lines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transaction_sell_lines_purchase_lines`
@@ -4381,7 +4343,7 @@ ALTER TABLE `units`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_contact_access`
@@ -4411,25 +4373,25 @@ ALTER TABLE `variation_location_details`
 -- AUTO_INCREMENT for table `variation_templates`
 --
 ALTER TABLE `variation_templates`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `variation_value_templates`
 --
 ALTER TABLE `variation_value_templates`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `warranties`
 --
 ALTER TABLE `warranties`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `woocommerce_sync_logs`
 --
 ALTER TABLE `woocommerce_sync_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

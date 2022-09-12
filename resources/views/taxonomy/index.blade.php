@@ -30,7 +30,7 @@
     @php
         $cat_code_enabled = isset($module_category_data['enable_taxonomy_code']) && !$module_category_data['enable_taxonomy_code'] ? false : true;
     @endphp
-    <input type="hidden" id=" " value="{{request()->get('type')}}">
+    <input type="hidden" id="category_type" value="{{request()->get('type')}}">
     @component('components.widget', ['class' => 'box-solid'])
             @slot('tool')
                 <div class="box-tools">
