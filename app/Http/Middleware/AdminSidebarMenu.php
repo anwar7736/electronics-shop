@@ -26,7 +26,7 @@ class AdminSidebarMenu
 
             $is_admin = auth()->user()->hasRole('Admin#' . session('business.id')) ? true : false;
             //Home
-            $menu->url(action('HomeController@index'), __('home.home'), ['icon' => 'fa fas fa-tachometer-alt', 'active' => request()->segment(1) == 'home'])->order(5);
+            $menu->url(action('HomeController@index'), __('home.home'), ['icon' => 'fa-solid fa-house-alt', 'active' => request()->segment(1) == 'home'])->order(5);
 
             //User management dropdown
             if (auth()->user()->can('user.view') || auth()->user()->can('user.create') || auth()->user()->can('roles.view')) {
