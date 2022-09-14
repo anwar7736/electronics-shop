@@ -286,4 +286,12 @@
     });
 </script>
 @endsection
+@section('css')
+    <style>
+        .btn-info {
+          background : #1f7210 !important;
+          border : 1px solid #ffffff !important;
+        }
+    </style>
+@endsection
 
