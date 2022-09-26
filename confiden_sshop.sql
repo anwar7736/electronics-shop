@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2022 at 05:08 PM
+-- Generation Time: Sep 20, 2022 at 06:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -217,7 +217,15 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subj
 (97, 'default', 'added', 8, 'App\\Transaction', 1, 'App\\User', '[]', '2022-09-12 15:00:42', '2022-09-12 15:00:42'),
 (98, 'default', 'added', 9, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"payment_status\":\"due\"}}', '2022-09-12 15:01:34', '2022-09-12 15:01:34'),
 (99, 'default', 'edited', 9, 'App\\Transaction', 1, 'App\\User', '{\"attributes\":{\"payment_status\":\"due\"}}', '2022-09-12 15:01:49', '2022-09-12 15:01:49'),
-(100, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-12 15:07:48', '2022-09-12 15:07:48');
+(100, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-12 15:07:48', '2022-09-12 15:07:48'),
+(101, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-13 11:08:02', '2022-09-13 11:08:02'),
+(102, 'default', 'created', 1, 'Modules\\Essentials\\Entities\\EssentialsLeave', 1, 'App\\User', '{\"attributes\":{\"id\":1,\"essentials_leave_type_id\":1,\"business_id\":1,\"user_id\":1,\"start_date\":\"2022-09-14\",\"end_date\":\"2022-09-14\",\"ref_no\":\"2022\\/0001\",\"status\":\"pending\",\"reason\":\"For sick\",\"status_note\":null}}', '2022-09-13 11:54:14', '2022-09-13 11:54:14'),
+(103, 'default', 'updated', 1, 'Modules\\Essentials\\Entities\\EssentialsLeave', 1, 'App\\User', '{\"attributes\":{\"status\":\"cancelled\"},\"old\":{\"status\":\"pending\"}}', '2022-09-13 11:54:47', '2022-09-13 11:54:47'),
+(104, 'default', 'updated', 1, 'Modules\\Essentials\\Entities\\EssentialsLeave', 1, 'App\\User', '{\"attributes\":{\"status\":\"approved\"},\"old\":{\"status\":\"cancelled\"}}', '2022-09-13 11:54:54', '2022-09-13 11:54:54'),
+(105, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-14 04:59:38', '2022-09-14 04:59:38'),
+(106, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-15 05:22:04', '2022-09-15 05:22:04'),
+(107, 'default', 'login', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-19 10:16:30', '2022-09-19 10:16:30'),
+(108, 'default', 'logout', 1, 'App\\User', 1, 'App\\User', '[]', '2022-09-19 10:20:42', '2022-09-19 10:20:42');
 
 -- --------------------------------------------------------
 
@@ -401,7 +409,7 @@ CREATE TABLE `business` (
 --
 
 INSERT INTO `business` (`id`, `name`, `currency_id`, `start_date`, `tax_number_1`, `tax_label_1`, `tax_number_2`, `tax_label_2`, `default_sales_tax`, `default_profit_percent`, `owner_id`, `time_zone`, `fy_start_month`, `accounting_method`, `default_sales_discount`, `sell_price_tax`, `logo`, `sku_prefix`, `enable_product_expiry`, `expiry_type`, `on_product_expiry`, `stop_selling_before`, `enable_tooltip`, `purchase_in_diff_currency`, `purchase_currency_id`, `p_exchange_rate`, `transaction_edit_days`, `stock_expiry_alert_days`, `keyboard_shortcuts`, `pos_settings`, `manufacturing_settings`, `essentials_settings`, `woocommerce_api_settings`, `woocommerce_wh_oc_secret`, `woocommerce_wh_ou_secret`, `woocommerce_wh_od_secret`, `woocommerce_wh_or_secret`, `weighing_scale_setting`, `enable_brand`, `enable_category`, `enable_sub_category`, `enable_price_tax`, `enable_purchase_status`, `enable_lot_number`, `default_unit`, `enable_sub_units`, `enable_racks`, `enable_row`, `enable_position`, `enable_editing_product_from_purchase`, `sales_cmsn_agnt`, `item_addition_method`, `enable_inline_tax`, `currency_symbol_placement`, `enabled_modules`, `date_format`, `time_format`, `ref_no_prefixes`, `theme_color`, `created_by`, `enable_rp`, `rp_name`, `amount_for_unit_rp`, `min_order_total_for_rp`, `max_rp_per_order`, `redeem_amount_per_unit_rp`, `min_order_total_for_redeem`, `min_redeem_point`, `max_redeem_point`, `rp_expiry_period`, `rp_expiry_type`, `email_settings`, `sms_settings`, `custom_labels`, `common_settings`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'confidence shop', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 1, 'Asia/Dhaka', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', '{\"ref_no_prefix\":null,\"disable_editing_ingredient_qty\":true,\"enable_updating_product_price\":true}', NULL, NULL, NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 1, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\",\"account\",\"tables\",\"modifiers\",\"service_staff\",\"booking\",\"kitchen\",\"subscription\",\"types_of_service\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2021-04-22 23:34:37', '2022-09-12 15:07:28'),
+(1, 'Confidence Shop', 134, '1970-01-01', NULL, NULL, NULL, NULL, NULL, 25.00, 1, 'Asia/Dhaka', 1, 'fifo', '0.00', 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"recent_product_quantity\":\"f2\",\"weighing_scale\":null,\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"add_new_product\":\"f4\"}}', '{\"amount_rounding_method\":null,\"disable_pay_checkout\":0,\"disable_draft\":0,\"disable_express_checkout\":0,\"hide_product_suggestion\":0,\"hide_recent_trans\":0,\"disable_discount\":0,\"disable_order_tax\":0,\"is_pos_subtotal_editable\":0}', '{\"ref_no_prefix\":null,\"disable_editing_ingredient_qty\":true,\"enable_updating_product_price\":true}', NULL, NULL, NULL, NULL, NULL, NULL, '{\"label_prefix\":null,\"product_sku_length\":\"4\",\"qty_length\":\"3\",\"qty_length_decimal\":\"2\"}', 1, 1, 1, 1, 1, 1, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\",\"account\",\"tables\",\"modifiers\",\"service_staff\",\"booking\",\"kitchen\",\"subscription\",\"types_of_service\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"purchase_return\":null,\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"expense_payment\":null,\"business_location\":\"BL\",\"username\":null,\"subscription\":null,\"draft\":null}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', '{\"mail_driver\":\"smtp\",\"mail_host\":null,\"mail_port\":null,\"mail_username\":null,\"mail_password\":null,\"mail_encryption\":null,\"mail_from_address\":null,\"mail_from_name\":null}', '{\"sms_service\":\"other\",\"nexmo_key\":null,\"nexmo_secret\":null,\"nexmo_from\":null,\"twilio_sid\":null,\"twilio_token\":null,\"twilio_from\":null,\"url\":null,\"send_to_param_name\":\"to\",\"msg_param_name\":\"text\",\"request_method\":\"post\",\"header_1\":null,\"header_val_1\":null,\"header_2\":null,\"header_val_2\":null,\"header_3\":null,\"header_val_3\":null,\"param_1\":null,\"param_val_1\":null,\"param_2\":null,\"param_val_2\":null,\"param_3\":null,\"param_val_3\":null,\"param_4\":null,\"param_val_4\":null,\"param_5\":null,\"param_val_5\":null,\"param_6\":null,\"param_val_6\":null,\"param_7\":null,\"param_val_7\":null,\"param_8\":null,\"param_val_8\":null,\"param_9\":null,\"param_val_9\":null,\"param_10\":null,\"param_val_10\":null}', '{\"payments\":{\"custom_pay_1\":null,\"custom_pay_2\":null,\"custom_pay_3\":null,\"custom_pay_4\":null,\"custom_pay_5\":null,\"custom_pay_6\":null,\"custom_pay_7\":null},\"contact\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null,\"custom_field_6\":null,\"custom_field_7\":null,\"custom_field_8\":null,\"custom_field_9\":null,\"custom_field_10\":null},\"product\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"location\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"user\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"purchase\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"sell\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null},\"shipping\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null,\"custom_field_5\":null},\"types_of_service\":{\"custom_field_1\":null,\"custom_field_2\":null,\"custom_field_3\":null,\"custom_field_4\":null}}', '{\"default_credit_limit\":null,\"default_datatable_page_entries\":\"25\"}', 1, '2021-04-22 23:34:37', '2022-09-15 05:45:49'),
 (2, 'Supreme', 134, '2021-05-05', NULL, NULL, NULL, NULL, NULL, 25.00, 2, 'Asia/Kolkata', 1, 'fifo', NULL, 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 'Shoe Park', 134, '2021-10-20', NULL, NULL, NULL, NULL, NULL, 25.00, 3, 'Asia/Dhaka', 1, 'fifo', NULL, 'includes', '1634747155_696.png', NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 'Chicken Bite', 134, '2022-01-26', NULL, NULL, NULL, NULL, NULL, 25.00, 4, 'Asia/Dhaka', 1, 'fifo', NULL, 'includes', NULL, NULL, 0, 'add_expiry', 'keep_selling', 0, 1, 0, NULL, '1.000', 30, 30, '{\"pos\":{\"express_checkout\":\"shift+e\",\"pay_n_ckeckout\":\"shift+p\",\"draft\":\"shift+d\",\"cancel\":\"shift+c\",\"edit_discount\":\"shift+i\",\"edit_order_tax\":\"shift+t\",\"add_payment_row\":\"shift+r\",\"finalize_payment\":\"shift+f\",\"recent_product_quantity\":\"f2\",\"add_new_product\":\"f4\"}}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 1, 1, 1, 1, 0, NULL, 0, 0, 0, 0, 1, NULL, 1, 0, 'before', '[\"purchases\",\"add_sale\",\"pos_sale\",\"stock_transfers\",\"stock_adjustment\",\"expenses\"]', 'm/d/Y', '24', '{\"purchase\":\"PO\",\"stock_transfer\":\"ST\",\"stock_adjustment\":\"SA\",\"sell_return\":\"CN\",\"expense\":\"EP\",\"contacts\":\"CO\",\"purchase_payment\":\"PP\",\"sell_payment\":\"SP\",\"business_location\":\"BL\"}', NULL, NULL, 0, NULL, '1.0000', '1.0000', NULL, '1.0000', '1.0000', NULL, NULL, NULL, 'year', NULL, NULL, NULL, NULL, 1, '2022-01-26 13:49:43', '2022-01-26 13:49:43'),
@@ -452,7 +460,7 @@ CREATE TABLE `business_locations` (
 --
 
 INSERT INTO `business_locations` (`id`, `business_id`, `location_id`, `name`, `landmark`, `country`, `state`, `city`, `zip_code`, `invoice_scheme_id`, `invoice_layout_id`, `sale_invoice_layout_id`, `selling_price_group_id`, `print_receipt_on_invoice`, `receipt_printer_type`, `printer_id`, `mobile`, `alternate_number`, `email`, `website`, `featured_products`, `is_active`, `default_payment_accounts`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'BL0001', 'confidencesoft', 'mohammodpur', 'Bangladesh', 'dhaka', 'dhaka', '1207', 1, 1, 1, NULL, 1, 'browser', NULL, '01611306400', '01611306400', '', 'http://shop.confidencesoft.com/', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2021-04-22 23:34:37', '2021-04-22 23:34:37'),
+(1, 1, 'BL0001', 'confidencesoft', 'mohammodpur', 'Bangladesh', 'dhaka', 'dhaka', '1207', 1, 1, 1, NULL, 1, 'browser', NULL, '01611306400', '01611306400', NULL, 'http://shop.confidencesoft.com/', NULL, 1, '{\"cash\":{\"is_enabled\":\"1\",\"account\":null},\"card\":{\"is_enabled\":\"1\",\"account\":null},\"cheque\":{\"is_enabled\":\"1\",\"account\":null},\"bank_transfer\":{\"is_enabled\":\"1\",\"account\":null},\"other\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_1\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_2\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_3\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_4\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_5\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_6\":{\"is_enabled\":\"1\",\"account\":null},\"custom_pay_7\":{\"is_enabled\":\"1\",\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2021-04-22 23:34:37', '2022-09-13 11:08:53'),
 (2, 2, 'BL0001', 'Supreme', 'Uttora', 'Bangladesh', 'Select an option…', 'dhaka', '1230', 2, 2, 2, NULL, 1, 'browser', NULL, '01766989636', '01766989636', '', 'http://shop.confidencesoft.com/', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 3, 'BL0001', 'Shoe Park', 'dhaka', 'bangladesh', 'Shyamoli Square Plot # 24/1-2, Mirpur Rd', 'Dhaka', '1207', 3, 3, 3, NULL, 1, 'browser', NULL, '01754493353', '01746881387', '', 'http://shoeparkbd.com/', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2021-10-20 15:55:56', '2021-10-20 15:55:56'),
 (4, 4, 'BL0001', 'Chicken Bite', 'dhaka', 'Bangladesh', 'Adabar', 'Dhaka', '1207', 4, 4, 4, NULL, 1, 'browser', NULL, '01717401530', '01717401530', '', '', NULL, 1, '{\"cash\":{\"is_enabled\":1,\"account\":null},\"card\":{\"is_enabled\":1,\"account\":null},\"cheque\":{\"is_enabled\":1,\"account\":null},\"bank_transfer\":{\"is_enabled\":1,\"account\":null},\"other\":{\"is_enabled\":1,\"account\":null},\"custom_pay_1\":{\"is_enabled\":1,\"account\":null},\"custom_pay_2\":{\"is_enabled\":1,\"account\":null},\"custom_pay_3\":{\"is_enabled\":1,\"account\":null},\"custom_pay_4\":{\"is_enabled\":1,\"account\":null},\"custom_pay_5\":{\"is_enabled\":1,\"account\":null},\"custom_pay_6\":{\"is_enabled\":1,\"account\":null},\"custom_pay_7\":{\"is_enabled\":1,\"account\":null}}', NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
@@ -485,7 +493,7 @@ CREATE TABLE `cash_registers` (
 --
 
 INSERT INTO `cash_registers` (`id`, `business_id`, `location_id`, `user_id`, `status`, `closed_at`, `closing_amount`, `total_card_slips`, `total_cheques`, `closing_note`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 'open', NULL, '0.0000', 0, 0, NULL, '2021-07-01 08:26:00', '2021-07-01 08:26:33'),
+(1, 1, 1, 1, 'close', '2022-09-13 18:04:47', '500.0000', 0, 0, NULL, '2021-07-01 08:26:00', '2022-09-13 12:04:47'),
 (2, 3, 3, 3, 'open', NULL, '0.0000', 0, 0, NULL, '2021-10-22 15:59:00', '2021-10-22 15:59:45');
 
 -- --------------------------------------------------------
@@ -1056,6 +1064,13 @@ CREATE TABLE `essentials_leave_types` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `essentials_leave_types`
+--
+
+INSERT INTO `essentials_leave_types` (`id`, `leave_type`, `max_leave_count`, `leave_count_interval`, `business_id`, `created_at`, `updated_at`) VALUES
+(1, 'Sick', 3, 'month', 1, '2022-09-13 11:53:19', '2022-09-13 11:53:43');
+
 -- --------------------------------------------------------
 
 --
@@ -1107,6 +1122,13 @@ CREATE TABLE `essentials_shifts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `essentials_shifts`
+--
+
+INSERT INTO `essentials_shifts` (`id`, `name`, `type`, `business_id`, `start_time`, `end_time`, `holidays`, `created_at`, `updated_at`) VALUES
+(1, 'Anwar Hossain', 'flexible_shift', 1, NULL, NULL, '[\"friday\"]', '2022-09-13 11:57:06', '2022-09-13 11:57:27');
 
 -- --------------------------------------------------------
 
@@ -1167,6 +1189,13 @@ CREATE TABLE `essentials_user_allowance_and_deductions` (
   `allowance_deduction_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `essentials_user_allowance_and_deductions`
+--
+
+INSERT INTO `essentials_user_allowance_and_deductions` (`user_id`, `allowance_deduction_id`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1182,6 +1211,13 @@ CREATE TABLE `essentials_user_shifts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `essentials_user_shifts`
+--
+
+INSERT INTO `essentials_user_shifts` (`id`, `user_id`, `essentials_shift_id`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2022-09-13', '2022-09-13', '2022-09-13 11:57:18', '2022-09-13 11:57:18');
 
 -- --------------------------------------------------------
 
@@ -1342,7 +1378,7 @@ CREATE TABLE `invoice_schemes` (
 --
 
 INSERT INTO `invoice_schemes` (`id`, `business_id`, `name`, `scheme_type`, `prefix`, `start_number`, `invoice_count`, `total_digits`, `is_default`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Default', 'blank', '', 1, 1, 4, 1, '2021-04-22 23:34:37', '2022-09-12 14:52:43'),
+(1, 1, 'asdf', 'year', NULL, 10, 1, 4, 1, '2021-04-22 23:34:37', '2022-09-13 11:22:04'),
 (2, 2, 'Default', 'blank', '', 1, 0, 4, 1, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 3, 'Default', 'blank', '', 1, 0, 4, 1, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 4, 'Default', 'blank', '', 1, 0, 4, 1, '2022-01-26 13:49:45', '2022-01-26 13:49:45'),
@@ -2376,7 +2412,8 @@ INSERT INTO `reference_counts` (`id`, `ref_type`, `ref_count`, `business_id`, `c
 (18, 'purchase', 1, 1, '2022-09-12 14:47:06', '2022-09-12 14:47:06'),
 (19, 'purchase_return', 1, 1, '2022-09-12 14:50:04', '2022-09-12 14:50:04'),
 (20, 'draft', 2, 1, '2022-09-12 14:54:58', '2022-09-12 14:56:09'),
-(21, 'stock_adjustment', 1, 1, '2022-09-12 15:00:42', '2022-09-12 15:00:42');
+(21, 'stock_adjustment', 1, 1, '2022-09-12 15:00:42', '2022-09-12 15:00:42'),
+(22, 'leave', 1, 1, '2022-09-13 11:54:14', '2022-09-13 11:54:14');
 
 -- --------------------------------------------------------
 
@@ -2406,6 +2443,13 @@ CREATE TABLE `res_tables` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `res_tables`
+--
+
+INSERT INTO `res_tables` (`id`, `business_id`, `location_id`, `name`, `description`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'kpiop', 'kopkk', 1, '2022-09-13 11:51:18', '2022-09-13 11:51:01', '2022-09-13 11:51:18');
 
 -- --------------------------------------------------------
 
@@ -3035,7 +3079,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_type`, `surname`, `first_name`, `last_name`, `username`, `email`, `password`, `language`, `contact_no`, `address`, `remember_token`, `business_id`, `essentials_department_id`, `essentials_designation_id`, `max_sales_discount_percent`, `allow_login`, `status`, `is_cmmsn_agnt`, `cmmsn_percent`, `selected_contacts`, `dob`, `gender`, `marital_status`, `blood_group`, `contact_number`, `alt_number`, `family_number`, `fb_link`, `twitter_link`, `social_media_1`, `social_media_2`, `permanent_address`, `current_address`, `guardian_name`, `custom_field_1`, `custom_field_2`, `custom_field_3`, `custom_field_4`, `bank_details`, `id_proof_name`, `id_proof_number`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'user', 'MD', 'Aanin', 'Mahmodul', 'anin', 'anin.bd@gmail.com', '$2y$10$PaDepI0On1TSKoENg3yiWOdCv8wijgrpT/P745KepbEnR8XFzzA5S', 'en', NULL, NULL, 'AJZxle8KvCVsguLM47tdQf94J00PAWdyFZDvkECpz1BhzeCYHhFeBwo2pNAG', 1, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, NULL, '2021-04-22 23:34:37', '2022-09-03 08:37:06'),
+(1, 'user', 'MD', 'Aanin', 'Mahmodul', 'anin', 'anin.bd@gmail.com', '$2y$10$PaDepI0On1TSKoENg3yiWOdCv8wijgrpT/P745KepbEnR8XFzzA5S', 'en', NULL, NULL, 'CdGHjW25Qx3dG6UaJYGDdEclJESwgUNdXZMBMgn7sajYgAwAYKnrthzXBYiF', 1, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{\"account_holder_name\":null,\"account_number\":null,\"bank_name\":null,\"bank_code\":null,\"branch\":null,\"tax_payer_id\":null}', NULL, NULL, NULL, '2021-04-22 23:34:37', '2022-09-03 08:37:06'),
 (2, 'user', 'Mr', 'Moshiur', NULL, 'Moshiur', 'moshiur.sujan@live.com', '9058e374a4ab7705d2283b33bf0f23ae', 'en', NULL, NULL, NULL, 2, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-05-05 09:11:59', '2021-05-05 09:11:59'),
 (3, 'user', 'MD', 'Abdus Salam', 'Fotik', 'fotik', 'info.fotik@gmail.com', '$2y$10$zMsnRyQ61XBXFl29SDSofuNwnegVAETzMOw0ANbiTawtEQi0onMoC', 'en', NULL, NULL, 'te2GumRi3a0M8wY2dtMk1UabNUdFHrfOLQQLuCFy276CpiOuO4cbZ3LWzRD0', 3, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-10-20 15:55:55', '2021-10-20 15:55:55'),
 (4, 'user', 'Md', 'Rupom', NULL, 'Rupom', NULL, '$2y$10$JNUbv37C.VoEwLSM84KxFuS9aPZCdMpH/RduedPHwdDL/65jvZ0R6', 'en', NULL, NULL, NULL, 4, NULL, NULL, NULL, 1, 'active', 0, '0.00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-26 13:49:43', '2022-01-26 13:49:43'),
@@ -3971,7 +4015,7 @@ ALTER TABLE `account_types`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `barcodes`
@@ -4061,7 +4105,7 @@ ALTER TABLE `document_and_notes`
 -- AUTO_INCREMENT for table `essentials_allowances_and_deductions`
 --
 ALTER TABLE `essentials_allowances_and_deductions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `essentials_attendances`
@@ -4091,13 +4135,13 @@ ALTER TABLE `essentials_holidays`
 -- AUTO_INCREMENT for table `essentials_leaves`
 --
 ALTER TABLE `essentials_leaves`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `essentials_leave_types`
 --
 ALTER TABLE `essentials_leave_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `essentials_messages`
@@ -4115,7 +4159,7 @@ ALTER TABLE `essentials_reminders`
 -- AUTO_INCREMENT for table `essentials_shifts`
 --
 ALTER TABLE `essentials_shifts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `essentials_todo_comments`
@@ -4133,7 +4177,7 @@ ALTER TABLE `essentials_to_dos`
 -- AUTO_INCREMENT for table `essentials_user_shifts`
 --
 ALTER TABLE `essentials_user_shifts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `expense_categories`
@@ -4151,7 +4195,7 @@ ALTER TABLE `invoice_layouts`
 -- AUTO_INCREMENT for table `invoice_schemes`
 --
 ALTER TABLE `invoice_schemes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `media`
@@ -4223,7 +4267,7 @@ ALTER TABLE `printers`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product_racks`
@@ -4235,7 +4279,7 @@ ALTER TABLE `product_racks`
 -- AUTO_INCREMENT for table `product_variations`
 --
 ALTER TABLE `product_variations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `purchase_lines`
@@ -4247,13 +4291,13 @@ ALTER TABLE `purchase_lines`
 -- AUTO_INCREMENT for table `reference_counts`
 --
 ALTER TABLE `reference_counts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `res_tables`
 --
 ALTER TABLE `res_tables`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -4331,7 +4375,7 @@ ALTER TABLE `transaction_sell_lines_purchase_lines`
 -- AUTO_INCREMENT for table `types_of_services`
 --
 ALTER TABLE `types_of_services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `units`
@@ -4355,7 +4399,7 @@ ALTER TABLE `user_contact_access`
 -- AUTO_INCREMENT for table `variations`
 --
 ALTER TABLE `variations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `variation_group_prices`

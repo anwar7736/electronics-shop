@@ -3,12 +3,12 @@
     <div class="calcBG col-md-12 text-center">
       <div class="row" id="result">
         <form name="calc">
-          <input type="text" class="screen text-right" name="result" readonly>
+          <input type="text" class="screen text-right" name="result" readonly value="0">
         </form>
       </div>
       <div class="row">
-        <button id="allClear" type="button" class="btn btn-danger" onclick="clearScreen()">AC</button>
-        <button id="clear" type="button" class="btn btn-warning" onclick="clearScreen()">CE</button>
+        <button id="allClear" type="button" class="btn btn-danger" onclick="document.calc.result.value=0">AC</button>
+        <button id="clear" type="button" class="btn btn-warning" onclick="let input = document.calc.result.value; let lastValue = input.slice(0, document.calc.result.value.length-1); if(lastValue.length === 0){document.calc.result.value=0} else document.calc.result.value=lastValue; ">x</button>
         <button id="%" type="button" class="btn" onclick="calEnterVal(this.id)">%</button>
         <button id="/" type="button" class="btn" onclick="calEnterVal(this.id)">÷</button>
       </div>
