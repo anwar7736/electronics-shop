@@ -1,15 +1,9 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//customer feedback
+Route::post('customer/feedback', 'CustomerFeedbackController@customerFeedback')->name('customer.feedback');
+Route::view('customer_query', 'feedback.customer_query');
+Route::view('ovinondon', 'feedback.ovinondon')->name('ovinondon');
 
 include_once('install_r.php');
 
